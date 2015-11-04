@@ -1,8 +1,16 @@
-**NOTE: This plugin is currently under development. This README outlines the planned future functionality (subject to change).**
+**WARNING: This plugin is currently under development. This README outlines the planned functionality (subject to change).**
+
+----------
 
 # ember-cli-deploy-cloudfront
 
-> An ember-cli-deploy plugin to invalidate cached files on AWS CloudFront
+> An ember-cli-deploy plugin to invalidate cached files on [AWS CloudFront](https://aws.amazon.com/cloudfront/)
+
+----------
+
+**WARNING: This plugin is only compatible with ember-cli-deploy versions >= 0.5.0**
+
+----------
 
 This plugin invalidates one or more files in an Amazon CloudFront distribution. It is primarily useful for invalidating an outdated `index.html`, but can be configured to invalidate any other files as well.
 
