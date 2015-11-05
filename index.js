@@ -9,9 +9,16 @@ module.exports = {
   createDeployPlugin: function(options) {
     var DeployPlugin = BasePlugin.extend({
       name: options.name,
+      defaultConfig: {
+        objectPaths: '/index.html'
+      }
+      requiredConfig: ['accessKeyId', 'secretAccessKey', 'distributionId'],
 
       didActivate: function(context) {
 
+        var distributionId = this.readConfig('distributionId');
+
+        this.log('preparing to create invalidation for distribution' + distributionId);
       }
     });
 

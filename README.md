@@ -82,11 +82,11 @@ The CloudFront distribution ID that should be invalidated.
 
 *Default:* `undefined`
 
-### filePattern
+### objectPaths
 
-Files that match this pattern will be invalidated on CloudFront. The file pattern must be relative to `distDir`.
+Files that match these paths will be invalidated on CloudFront. The file pattern must be relative to the CloudFront distribution root.
 
-*Default:* 'index.html'
+*Default:* '/index.html'
 
 ## Prerequisites
 
