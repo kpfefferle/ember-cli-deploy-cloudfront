@@ -11,7 +11,7 @@ module.exports = {
       name: options.name,
       defaultConfig: {
         objectPaths: '/index.html'
-      }
+      },
       requiredConfig: ['accessKeyId', 'secretAccessKey', 'distributionId'],
 
       didActivate: function(context) {
