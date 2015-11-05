@@ -18,7 +18,7 @@ module.exports = {
 
         var distributionId = this.readConfig('distributionId');
 
-        this.log('preparing to create invalidation for distribution `' + distributionId + '`');
+        this.log('preparing to create invalidation for CloudFront distribution `' + distributionId + '`');
       }
     });
 
