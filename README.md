@@ -33,7 +33,7 @@ To get up and running quickly, do the following:
 1. Place the following configuration into `config/deploy.js`
 
     ```javascript
-    ENV.cloudFront {
+    ENV.cloudfront {
       accessKeyId: '<your-aws-access-key>',
       secretAccessKey: '<your-aws-secret>',
       distributionId: '<your-cloudfront-distribution-id>'
