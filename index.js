@@ -23,7 +23,7 @@ module.exports = {
 
         this.log('preparing to create invalidation for CloudFront distribution `' + distributionId + '`', { verbose: true });
 
-        this.log('created invalidation for ' + objectPaths.length + ' objects ok', { verbose: true })
+        this.log('created invalidation for ' + objectPaths.length + ' object(s) ok', { verbose: true })
       }
     });
 
