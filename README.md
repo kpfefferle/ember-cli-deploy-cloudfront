@@ -84,15 +84,9 @@ The CloudFront distribution ID that should be invalidated.
 
 ### objectPaths
 
-Files that match these paths will be invalidated on CloudFront. The file pattern must be relative to the CloudFront distribution root.
+CloudFront object paths contained in this array will be invalidated on CloudFront. Each object path must be relative to the CloudFront distribution root and begin with `/`.
 
-*Default:* '/index.html'
-
-## Prerequisites
-
-The following properties are expected to be present on the deployment `context` object:
-
-[TBD]
+*Default:* `['/index.html']`
 
 ## Running Tests
 

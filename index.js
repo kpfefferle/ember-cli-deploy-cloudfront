@@ -10,7 +10,7 @@ module.exports = {
     var DeployPlugin = BasePlugin.extend({
       name: options.name,
       defaultConfig: {
-        objectPaths: '/index.html'
+        objectPaths: ['/index.html']
       },
       requiredConfig: ['accessKeyId', 'secretAccessKey', 'distributionId'],
 
@@ -21,7 +21,9 @@ module.exports = {
         var distributionId  = this.readConfig('distributionId');
         var objectPaths     = this.readConfig('objectPaths');
 
-        this.log('preparing to create invalidation for CloudFront distribution `' + distributionId + '`');
+        this.log('preparing to create invalidation for CloudFront distribution `' + distributionId + '`', { verbose: true });
+
+        this.log('created invalidation for ' + objectPaths.length + ' objects ok', { verbose: true })
       }
     });
 
