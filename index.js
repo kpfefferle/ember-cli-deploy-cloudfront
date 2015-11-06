@@ -16,10 +16,10 @@ module.exports = {
 
       didActivate: function(context) {
 
-        var accessKeyId = this.readConfig('accessKeyId');
+        var accessKeyId     = this.readConfig('accessKeyId');
         var secretAccessKey = this.readConfig('secretAccessKey');
-        var distributionId = this.readConfig('distributionId');
-        var objectPaths = this.readConfig('objectPaths');
+        var distributionId  = this.readConfig('distributionId');
+        var objectPaths     = this.readConfig('objectPaths');
 
         this.log('preparing to create invalidation for CloudFront distribution `' + distributionId + '`');
       }
