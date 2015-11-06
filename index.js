@@ -21,10 +21,7 @@ module.exports = {
         var distributionId = this.readConfig('distributionId');
         var objectPaths = this.readConfig('objectPaths');
 
-        this.log('setting for accessKeyId: `' + accessKeyId + '`');
-        this.log('setting for secretAccessKey: `' + secretAccessKey + '`');
         this.log('preparing to create invalidation for CloudFront distribution `' + distributionId + '`');
-        this.log('setting for objectPaths: `' + objectPaths + '`');
       }
     });
 
