@@ -2,6 +2,7 @@
 'use strict';
 
 var BasePlugin = require('ember-cli-deploy-plugin');
+var CloudFront = require('./lib/cloudfront');
 
 module.exports = {
   name: 'ember-cli-deploy-cloudfront',
