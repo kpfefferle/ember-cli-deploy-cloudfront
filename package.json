@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-deploy-cloudfront",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "An ember-cli-deploy plugin to invalidate CloudFront cache.",
   "directories": {
     "doc": "doc",
     "test": "tests"
