@@ -10,27 +10,19 @@ describe('cloudfront', function() {
   beforeEach(function() {
     cloudfrontClient = {
       createInvalidation: function(params, cb) {
-        cb();
-      }
-    };
-    mockUi = {
-      messages: [],
-      write: function() {},
-      writeLine: function(message) {
-        this.messages.push(message);
+        cb(null, {
+          Invalidation: {
+            Id: 'ID'
+          }
+        });
       }
     };
     plugin = {
-      ui: mockUi,
       readConfig: function(propertyName) {
         if (propertyName === 'cloudfrontClient') {
           return cloudfrontClient;
         }
       },
-      log: function(message, opts) {
-        this.ui.write('|    ');
-        this.ui.writeLine('- ' + message);
-      }
     };
     subject = new CloudFront({
       plugin: plugin
@@ -38,6 +30,15 @@ describe('cloudfront', function() {
   });
 
   describe('#invalidate', function() {
-    
+    it('resolves if invalidation succeeds', function() {
+      var options = {
+        objectPaths: ['/index.html'],
+        distribution: 'ABCDEFG'
+      };
+
+      var promises = subject.invalidate(options);
+
+      return assert.isFulfilled(promises);
+    });
   });
 });

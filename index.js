@@ -41,8 +41,8 @@ module.exports = {
         this.log('preparing to create invalidation for CloudFront distribution `' + distribution + '`', { verbose: true });
 
         return cloudfront.invalidate(options)
-        .then(function(objectsInvalidated) {
-          this.log('created invalidation for ' + objectsInvalidated.length + ' object(s) ok', { verbose: true });
+        .then(function(invalidation) {
+          this.log('created CloudFront invalidation `' + invalidation + '` ok', { verbose: true });
         })
         .catch(this._errorMessage.bind(this));
       },
