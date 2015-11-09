@@ -12,8 +12,8 @@ module.exports = {
       name: options.name,
       defaultConfig: {
         objectPaths: ['/index.html'],
-        cloudFrontClient: function(context) {
-          return context.cloudFrontClient; // if you want to provide your own CloudFront client to be used instead of one from aws-sdk
+        cloudfrontClient: function(context) {
+          return context.cloudfrontClient; // if you want to provide your own CloudFront client to be used instead of one from aws-sdk
         }
       },
       requiredConfig: ['accessKeyId', 'secretAccessKey', 'distributionId'],
