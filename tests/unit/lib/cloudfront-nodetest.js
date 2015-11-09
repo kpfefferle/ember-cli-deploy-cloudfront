@@ -8,13 +8,14 @@ describe('cloudfront', function() {
   });
 
   beforeEach(function() {
+    validResponse = {
+      Invalidation: {
+        Id: 'ID'
+      }
+    };
     cloudfrontClient = {
       createInvalidation: function(params, cb) {
-        cb(null, {
-          Invalidation: {
-            Id: 'ID'
-          }
-        });
+        cb(null, validResponse);
       }
     };
     plugin = {
@@ -48,6 +49,26 @@ describe('cloudfront', function() {
       var promises = subject.invalidate(validOptions);
 
       return assert.isRejected(promises);
+    });
+
+    describe('creating the invalidation with CloudFront', function() {
+      it('sends the correct params', function() {
+        var cloudfrontParams;
+        cloudfrontClient.createInvalidation = function(params, cb) {
+          cloudfrontParams = params;
+          cb(null, validResponse);
+        };
+
+        var promises = subject.invalidate(validOptions);
+
+        return assert.isFulfilled(promises)
+          .then(function() {
+            assert.equal(cloudfrontParams.DistributionId, validOptions.distribution);
+            assert.isDefined(cloudfrontParams.InvalidationBatch.CallerReference);
+            assert.equal(cloudfrontParams.InvalidationBatch.Paths.Quantity, validOptions.objectPaths.length);
+            assert.deepEqual(cloudfrontParams.InvalidationBatch.Paths.Items, validOptions.objectPaths);
+          });
+      });
     });
   });
 });
