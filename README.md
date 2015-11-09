@@ -76,11 +76,17 @@ The AWS secret for the user that has the ability to upload to the `bucket`.
 
 *Default:* `undefined`
 
-### distributionId (`required`)
+### distribution (`required`)
 
 The CloudFront distribution ID that should be invalidated.
 
 *Default:* `undefined`
+
+### region
+
+The AWS region to send service requests to.
+
+*Default:* `us-east-1`
 
 ### objectPaths
 

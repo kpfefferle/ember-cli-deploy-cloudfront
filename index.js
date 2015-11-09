@@ -12,6 +12,7 @@ module.exports = {
     var DeployPlugin = BasePlugin.extend({
       name: options.name,
       defaultConfig: {
+        region: 'us-east-1',
         objectPaths: ['/index.html'],
         invalidationClient: function(context) {
           return context.invalidationClient; // if you want to provide your own invalidation client to be used instead of one from this plugin
@@ -20,14 +21,14 @@ module.exports = {
           return context.cloudfrontClient; // if you want to provide your own CloudFront client to be used instead of one from aws-sdk
         }
       },
-      requiredConfig: ['accessKeyId', 'secretAccessKey', 'distributionId'],
+      requiredConfig: ['accessKeyId', 'secretAccessKey', 'distribution', 'region'],
 
       didActivate: function(context) {
         var self            = this;
 
         var accessKeyId     = this.readConfig('accessKeyId');
         var secretAccessKey = this.readConfig('secretAccessKey');
-        var distributionId  = this.readConfig('distributionId');
+        var distribution  = this.readConfig('distribution');
         var objectPaths     = this.readConfig('objectPaths');
 
         var cloudfront = this.readConfig('invalidationClient') || new CloudFront({
@@ -36,7 +37,7 @@ module.exports = {
 
         var options = {
           objectPaths: objectPaths,
-          distribution: distributionId
+          distribution: distribution
         };
 
         this.log('preparing to create invalidation for CloudFront distribution `' + distributionId + '`', { verbose: true });
