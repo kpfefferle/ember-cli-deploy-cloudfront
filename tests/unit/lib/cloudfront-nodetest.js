@@ -27,18 +27,27 @@ describe('cloudfront', function() {
     subject = new CloudFront({
       plugin: plugin
     });
+    validOptions = {
+      objectPaths: ['/index.html'],
+      distribution: 'ABCDEFG'
+    };
   });
 
   describe('#invalidate', function() {
     it('resolves if invalidation succeeds', function() {
-      var options = {
-        objectPaths: ['/index.html'],
-        distribution: 'ABCDEFG'
-      };
-
-      var promises = subject.invalidate(options);
+      var promises = subject.invalidate(validOptions);
 
       return assert.isFulfilled(promises);
+    });
+
+    it('rejects if invalidation fails', function() {
+      cloudfrontClient.createInvalidation = function(params, cb) {
+        cb('error creating invalidation');
+      };
+
+      var promises = subject.invalidate(validOptions);
+
+      return assert.isRejected(promises);
     });
   });
 });
