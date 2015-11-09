@@ -26,13 +26,11 @@ module.exports = {
       didActivate: function(context) {
         var self            = this;
 
-        var accessKeyId     = this.readConfig('accessKeyId');
-        var secretAccessKey = this.readConfig('secretAccessKey');
-        var distribution  = this.readConfig('distribution');
+        var distribution    = this.readConfig('distribution');
         var objectPaths     = this.readConfig('objectPaths');
 
         var cloudfront = this.readConfig('invalidationClient') || new CloudFront({
-          plugin: this;
+          plugin: this
         });
 
         var options = {
@@ -40,11 +38,11 @@ module.exports = {
           distribution: distribution
         };
 
-        this.log('preparing to create invalidation for CloudFront distribution `' + distributionId + '`', { verbose: true });
+        this.log('preparing to create invalidation for CloudFront distribution `' + distribution + '`', { verbose: true });
 
         return cloudfront.invalidate(options)
         .then(function(objectsInvalidated) {
-          this.log('created invalidation for ' + objectsInvalidated.length + ' object(s) ok', { verbose: true })
+          this.log('created invalidation for ' + objectsInvalidated.length + ' object(s) ok', { verbose: true });
         })
         .catch(this._errorMessage.bind(this));
       },
