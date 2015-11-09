@@ -88,6 +88,14 @@ CloudFront object paths contained in this array will be invalidated on CloudFron
 
 *Default:* `['/index.html']`
 
+### invalidationClient
+
+The client used to create the invalidation. This allows the user the ability to use their own client for invalidating instead of the one provided by this plugin.
+
+The client specified MUST implement a function called `invalidate`.
+
+*Default:* the upload client provided by ember-cli-deploy-cloudfront
+
 ### cloudfrontClient
 
 The underlying CloudFront library used to create the invalidation with CloudFront. This allows the user to use the default invalidation client provided by this plugin but switch out the underlying library that is used to actually create the invalidation.

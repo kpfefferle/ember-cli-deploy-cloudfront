@@ -12,6 +12,9 @@ module.exports = {
       name: options.name,
       defaultConfig: {
         objectPaths: ['/index.html'],
+        invalidationClient: function(context) {
+          return context.invalidationClient; // if you want to provide your own invalidation client to be used instead of one from this plugin
+        },
         cloudfrontClient: function(context) {
           return context.cloudfrontClient; // if you want to provide your own CloudFront client to be used instead of one from aws-sdk
         }
