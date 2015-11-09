@@ -88,6 +88,14 @@ CloudFront object paths contained in this array will be invalidated on CloudFron
 
 *Default:* `['/index.html']`
 
+### cloudFrontClient
+
+The underlying CloudFront library used to create the invalidation with CloudFront. This allows the user to use the default invalidation client provided by this plugin but switch out the underlying library that is used to actually create the invalidation.
+
+The client specified MUST implement a function called `createInvalidation`.
+
+*Default:* the default CloudFront library is `aws-sdk`
+
 ## Running Tests
 
 - `npm test`
