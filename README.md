@@ -43,7 +43,7 @@ To get up and running quickly, do the following:
 1. Run the pipeline with the activation flag
 
     ```bash
-    $ ember deploy --activate
+    $ ember deploy production --activate
     ```
 
 ## Installation
