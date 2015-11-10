@@ -41,10 +41,10 @@ module.exports = {
         this.log('preparing to create invalidation for CloudFront distribution `' + distribution + '`', { verbose: true });
 
         return cloudfront.invalidate(options)
-        .then(function(invalidation) {
-          this.log('created CloudFront invalidation `' + invalidation + '` ok', { verbose: true });
-        })
-        .catch(this._errorMessage.bind(this));
+          .then(function(invalidation) {
+            self.log('created CloudFront invalidation `' + invalidation + '` ok', { verbose: true });
+          })
+          .catch(this._errorMessage.bind(this));
       },
       _errorMessage: function(error) {
         this.log(error, { color: 'red' });
