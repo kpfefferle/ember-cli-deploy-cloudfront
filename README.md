@@ -25,7 +25,7 @@ To get up and running quickly, do the following:
 1. Place the following configuration into `config/deploy.js`
 
     ```javascript
-    ENV.cloudfront {
+    ENV.cloudfront = {
       accessKeyId: '<your-aws-access-key>',
       secretAccessKey: '<your-aws-secret>',
       distribution: '<your-cloudfront-distribution-id>'
