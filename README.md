@@ -40,7 +40,7 @@ To get up and running quickly, do the following:
     }
     ```
 
-1. Run the pipeline with activation
+1. Run the pipeline with the activation flag
 
     ```bash
     $ ember deploy --activate
@@ -58,7 +58,7 @@ ember install ember-cli-deploy-cloudfront
 For detailed information on what plugin hooks are and how they work, please refer to the [Plugin Documentation][1].
 
 - `configure`
-- `activate`
+- `didActivate`
 
 ## Configuration Options
 
