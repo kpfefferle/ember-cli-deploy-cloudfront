@@ -36,7 +36,7 @@ To get up and running quickly, do the following:
     ENV.cloudfront {
       accessKeyId: '<your-aws-access-key>',
       secretAccessKey: '<your-aws-secret>',
-      distributionId: '<your-cloudfront-distribution-id>'
+      distribution: '<your-cloudfront-distribution-id>'
     }
     ```
 
