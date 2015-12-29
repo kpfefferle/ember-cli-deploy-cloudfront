@@ -56,15 +56,15 @@ For detailed information on what plugin hooks are and how they work, please refe
 
 For detailed information on how configuration of plugins works, please refer to the [Plugin Documentation][1].
 
-### accessKeyId (`required`)
+### accessKeyId
 
-The AWS access key for the user that has the ability to upload to the `bucket`.
+The AWS access key for the user that has the ability to upload to the `bucket`. If this is left undefined, the normal [AWS SDK credential resolution](https://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-configuring.html#Setting_AWS_Credentials) will take place.
 
 *Default:* `undefined`
 
-### secretAccessKey (`required`)
+### secretAccessKey
 
-The AWS secret for the user that has the ability to upload to the `bucket`.
+The AWS secret for the user that has the ability to upload to the `bucket`. This must be defined when `accessKeyId` is defined.
 
 *Default:* `undefined`
 
