@@ -1,3 +1,4 @@
+/* jshint node:true, undef:false, unused:false */
 var assert = require('ember-cli/tests/helpers/assert');
 
 
@@ -42,7 +43,7 @@ describe('cloudfront', function() {
     context('with a custom CloudFront client', function() {
       it('uses the custom client', function() {
         assert.equal(cloudfrontClient, subject._client);
-      })
+      });
     });
 
     context('using the aws-sdk CloudFront client', function() {
