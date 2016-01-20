@@ -21,7 +21,7 @@ module.exports = {
           return context.cloudfrontClient; // if you want to provide your own CloudFront client to be used instead of one from aws-sdk
         }
       },
-      requiredConfig: ['accessKeyId', 'secretAccessKey', 'distribution', 'region'],
+      requiredConfig: ['distribution', 'region'],
 
       didActivate: function(context) {
         var self            = this;
