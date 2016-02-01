@@ -37,7 +37,7 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
     "ember-resolver": "^2.0.3",
-    "ember-try": "^0.1.0",
+    "ember-try": "^0.1.1",
     "glob": "^6.0.4",
     "mocha": "^2.4.5"
   },
