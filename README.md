@@ -102,6 +102,16 @@ The client specified MUST implement a function called `createInvalidation`.
 
 *Default:* the default CloudFront library is `aws-sdk`
 
+### Disabling invalidation
+
+If you want to disable the CloudFront invalidation a specific environment, you can set `activateOnDeploy` conditionally based on the environment:
+
+```javascript
+if (deployTarget === 'staging') {
+  ENV.pipeline.activateOnDeploy = false;
+}
+```
+
 ## Running Tests
 
 - `npm test`
