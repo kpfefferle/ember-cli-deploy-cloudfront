@@ -102,6 +102,26 @@ The client specified MUST implement a function called `createInvalidation`.
 
 *Default:* the default CloudFront library is `aws-sdk`
 
+## Configuring AWS
+
+### Minimum CloudFront Permissions
+
+Ensure you have the minimum required permissions configured for the user (`accessKeyId`). A bare minimum policy should have the following permissions:
+
+```json
+{
+   "Version": "2012-10-17",
+   "Statement":[{
+      "Effect":"Allow",
+      "Action":["cloudfront:CreateInvalidation"],
+      "Resource":"*"
+      }
+   ]
+}
+```
+
+The `cloudfront:CreateInvalidation` action is the only one necessary for this addon, though the more permissive `cloudfront:*` permission will also work. AWS does not currently allow CloudFront permissions to be limited by distribution, so the only accepted value for `Resource` is `*` (all distributions).
+
 ## Running Tests
 
 - `npm test`
