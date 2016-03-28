@@ -1,5 +1,5 @@
 /* jshint node:true, undef:false, unused:false */
-var assert = require('ember-cli/tests/helpers/assert');
+var assert = require('../../helpers/assert');
 
 
 describe('cloudfront', function() {
