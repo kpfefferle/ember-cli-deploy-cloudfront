@@ -1,4 +1,6 @@
-# ember-cli-deploy-cloudfront [![Build Status](https://travis-ci.org/kpfefferle/ember-cli-deploy-cloudfront.svg?branch=master)](https://travis-ci.org/kpfefferle/ember-cli-deploy-cloudfront)
+# ember-cli-deploy-cloudfront
+[![Build Status](https://travis-ci.org/kpfefferle/ember-cli-deploy-cloudfront.svg?branch=master)](https://travis-ci.org/kpfefferle/ember-cli-deploy-cloudfront)
+[![Ember Observer Score](https://emberobserver.com/badges/ember-cli-deploy-cloudfront.svg)](https://emberobserver.com/addons/ember-cli-deploy-cloudfront)
 
 > An ember-cli-deploy plugin to invalidate cached files on [AWS CloudFront](https://aws.amazon.com/cloudfront/)
 
