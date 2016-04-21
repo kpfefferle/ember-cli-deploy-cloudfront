@@ -106,7 +106,7 @@ The client specified MUST implement a function called `createInvalidation`.
 
 ## Disable in Selected Environments
 
-If your application doesn't need CloudFront invalidation in some environments, you can whitelist the plugins that you *do* want ember-cli-deploy to run. For an application using the ember-cli-deploy-aws-pack for example, the whitelist would look like this when excluding ember-cli-deploy-cloudfront:
+If your application doesn't need CloudFront invalidation in an environment where you do need to run other activation hooks, it is possible to whitelist the plugins that you *do* want ember-cli-deploy to run. For an application using the ember-cli-deploy-aws-pack for example, the whitelist would look like this when excluding ember-cli-deploy-cloudfront:
 
 ```js
 ENV.plugins = ['build', 'gzip', 's3', 'manifest'];
