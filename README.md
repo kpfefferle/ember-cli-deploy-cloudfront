@@ -104,6 +104,16 @@ The client specified MUST implement a function called `createInvalidation`.
 
 *Default:* the default CloudFront library is `aws-sdk`
 
+## Disable in Selected Environments
+
+If your application doesn't need CloudFront invalidation in some environments, you can whitelist the plugins that you *do* want ember-cli-deploy to run. For an application using the ember-cli-deploy-aws-pack for example, the whitelist would look like this when excluding ember-cli-deploy-cloudfront:
+
+```js
+ENV.plugins = ['build', 'gzip', 's3', 'manifest'];
+```
+
+While this may not be ideal for complicated deploy processes with many plugins, there is an effort currently underway to add per-plugin disabling to ember-cli-deploy: https://github.com/ember-cli-deploy/ember-cli-deploy/pull/349
+
 ## Configuring AWS
 
 ### Minimum CloudFront Permissions
