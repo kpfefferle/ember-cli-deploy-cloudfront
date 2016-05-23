@@ -40,7 +40,7 @@
     "ember-resolver": "^2.0.3",
     "glob": "^7.0.3",
     "loader.js": "^4.0.7",
-    "mocha": "^2.4.5"
+    "mocha": "^2.5.0"
   },
   "keywords": [
     "ember-addon",
