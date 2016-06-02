@@ -47,7 +47,7 @@
     "ember-cli-deploy-plugin"
   ],
   "dependencies": {
-    "aws-sdk": "^2.3.16",
+    "aws-sdk": "^2.3.17",
     "core-object": "^2.0.1",
     "ember-cli-babel": "^5.1.6",
     "ember-cli-deploy-plugin": "~0.2.6",
