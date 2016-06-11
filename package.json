@@ -48,7 +48,7 @@
   ],
   "dependencies": {
     "aws-sdk": "^2.3.19",
-    "core-object": "^2.0.1",
+    "core-object": "^2.0.2",
     "ember-cli-babel": "^5.1.6",
     "ember-cli-deploy-plugin": "~0.2.6",
     "uuid": "^2.0.2"
