@@ -38,7 +38,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
-    "glob": "^7.0.3",
+    "glob": "^7.0.4",
     "loader.js": "^4.0.9",
     "mocha": "^2.5.1"
   },
