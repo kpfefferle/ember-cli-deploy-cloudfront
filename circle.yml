@@ -3,10 +3,10 @@ machine:
     version: "stable"
 dependencies:
   pre:
-    - npm install -g yarnpkg
+    - npm install -g yarn
     - npm install -g bower
     - sudo apt-get update; sudo apt-get install -y --only-upgrade google-chrome-stable
   override:
-    - yarn
+    - yarn install
   post:
     - bower install
