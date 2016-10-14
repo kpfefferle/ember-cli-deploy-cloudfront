@@ -18,7 +18,7 @@
   "author": "Kevin Pfefferle",
   "license": "MIT",
   "devDependencies": {
-    "broccoli-asset-rev": "^2.4.6",
+    "broccoli-asset-rev": "^2.5.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "ember-ajax": "^2.5.2",
