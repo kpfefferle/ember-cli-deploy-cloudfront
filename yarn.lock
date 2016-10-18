@@ -1662,9 +1662,9 @@ ember-cli@2.8.0:
     walk-sync "^0.2.6"
     yam "0.0.21"
 
-ember-data@^2.8.1:
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/ember-data/-/ember-data-2.8.1.tgz#ec09afaeab76df351dc561ce2ee1eb92f5bca8ff"
+ember-data@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/ember-data/-/ember-data-2.9.0.tgz#802e29ab98917c1053cfc44d5ee9d28e9faeb026"
   dependencies:
     amd-name-resolver "0.0.5"
     babel-plugin-feature-flags "^0.2.1"
