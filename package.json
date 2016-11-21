@@ -51,7 +51,7 @@
     "aws-sdk": "^2.7.5",
     "core-object": "^2.0.5",
     "ember-cli-babel": "^5.1.10",
-    "ember-cli-deploy-plugin": "~0.2.6",
+    "ember-cli-deploy-plugin": "~0.2.7",
     "uuid": "^2.0.3"
   },
   "ember-addon": {
