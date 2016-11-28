@@ -52,7 +52,7 @@
     "core-object": "^2.0.5",
     "ember-cli-babel": "^5.1.10",
     "ember-cli-deploy-plugin": "~0.2.9",
-    "uuid": "^2.0.3"
+    "uuid": "^3.0.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
