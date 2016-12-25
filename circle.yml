@@ -1,6 +1,6 @@
 machine:
   environment:
-    YARN_VERSION: 0.18.0
+    YARN_VERSION: 0.18.1
     PATH: "${PATH}:${HOME}/.yarn/bin"
   node:
     version: "stable"
