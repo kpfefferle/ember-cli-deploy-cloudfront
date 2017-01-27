@@ -138,4 +138,4 @@ The `cloudfront:CreateInvalidation` action is the only one necessary for this ad
 
 - `npm test`
 
-[1]: http://ember-cli.github.io/ember-cli-deploy/plugins "Plugin Documentation"
+[1]: http://ember-cli-deploy.com/docs/v0.6.x/plugins-overview/ "Plugin Documentation"
