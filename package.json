@@ -22,7 +22,7 @@
     "test": "node tests/runner.js"
   },
   "dependencies": {
-    "aws-sdk": "^2.12.0",
+    "aws-sdk": "^2.16.0",
     "core-object": "^3.0.0",
     "ember-cli-babel": "^5.2.4",
     "ember-cli-deploy-plugin": "~0.2.9",
