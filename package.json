@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-deploy-cloudfront",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "An ember-cli-deploy plugin to invalidate CloudFront cache.",
   "keywords": [
     "ember-addon",
