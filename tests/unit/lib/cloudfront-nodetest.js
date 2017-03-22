@@ -1,4 +1,6 @@
-/* jshint node:true, undef:false, unused:false */
+/* eslint-env node */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 var assert = require('../../helpers/assert');
 
 
