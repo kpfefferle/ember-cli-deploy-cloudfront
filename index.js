@@ -1,7 +1,7 @@
 /* eslint-env node */
 'use strict';
 
-var Promise    = require('ember-cli/lib/ext/promise');
+var RSVP       = require('rsvp');
 var BasePlugin = require('ember-cli-deploy-plugin');
 var CloudFront = require('./lib/cloudfront');
 
@@ -51,7 +51,7 @@ module.exports = {
         if (error) {
           this.log(error.stack, { color: 'red' });
         }
-        return Promise.reject(error);
+        return RSVP.reject(error);
       }
     });
 
