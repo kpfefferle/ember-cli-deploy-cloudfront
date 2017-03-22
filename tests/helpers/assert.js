@@ -1,4 +1,4 @@
-/* jshint node:true */
+/* eslint-env node */
 'use strict';
 
 var chai           = require('chai');
