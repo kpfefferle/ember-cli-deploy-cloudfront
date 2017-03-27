@@ -27,7 +27,7 @@
     "ember-cli-babel": "^5.2.4",
     "ember-cli-deploy-plugin": "~0.2.9",
     "uuid": "^3.0.1",
-    "rsvp": "^3.0"
+    "rsvp": "^3.0.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.5.0",
