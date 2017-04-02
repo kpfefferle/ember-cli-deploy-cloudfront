@@ -1,7 +1,7 @@
 /* eslint-env node */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-var assert = require('../../helpers/assert');
+var assert = require('../helpers/assert');
 
 
 describe('cloudfront', function() {
@@ -11,7 +11,7 @@ describe('cloudfront', function() {
     process.env['AWS_ACCESS_KEY_ID'] = 'set_via_env_var';
     process.env['AWS_SECRET_ACCESS_KEY'] = 'set_via_env_var';
 
-    CloudFront = require('../../../lib/cloudfront');
+    CloudFront = require('../../lib/cloudfront');
   });
 
   beforeEach(function() {

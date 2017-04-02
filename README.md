@@ -136,6 +136,10 @@ The `cloudfront:CreateInvalidation` action is the only one necessary for this ad
 
 ## Running Tests
 
-- `npm test`
+- `yarn test`
+
+## Why `ember build` and `ember test` don't work
+
+Since this is a node-only ember-cli addon, this package does not include many files and dependencies which are part of ember-cli's typical `ember build` and `ember test` processes.
 
 [1]: http://ember-cli-deploy.com/docs/v0.6.x/plugins-overview/ "Plugin Documentation"
