@@ -23,7 +23,7 @@ module.exports = {
       },
       requiredConfig: ['distribution', 'region'],
 
-      didActivate: function(context) {
+      didActivate: function(/*context*/) {
         var self            = this;
 
         var distribution    = this.readConfig('distribution');
@@ -46,6 +46,7 @@ module.exports = {
           })
           .catch(this._errorMessage.bind(this));
       },
+
       _errorMessage: function(error) {
         this.log(error, { color: 'red' });
         if (error) {

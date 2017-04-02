@@ -15,10 +15,10 @@ function addFiles(mocha, files) {
   glob.sync(root + files).forEach(mocha.addFile.bind(mocha));
 }
 
-addFiles(mocha, '**/*-nodetest.js');
+addFiles(mocha, '**/*-test.js');
 
 if (arg === 'all') {
-  addFiles(mocha, '**/*-nodetest-slow.js');
+  addFiles(mocha, '**/*-test-slow.js');
 }
 
 mocha.run(function(failures) {
