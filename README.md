@@ -70,6 +70,13 @@ The AWS secret for the user that has the ability to upload to the `bucket`. This
 
 *Default:* `undefined`
 
+### sessionToken
+
+The AWS session token for the user that has the ability to manage the CloudFront distribution. This may be required if you are using the [AWS Security Token Service][6].
+This requires both `accessKeyId` and `secretAccessKey` to be defined.
+
+*Default:* `undefined`
+
 ### distribution (`required`)
 
 The CloudFront distribution ID that should be invalidated.
