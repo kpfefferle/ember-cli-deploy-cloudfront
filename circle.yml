@@ -5,7 +5,7 @@ machine:
     version: "stable"
 dependencies:
   override:
-    - yarn
+    - yarn install --no-lockfile
   cache_directories:
     - ~/.cache/yarn
 test:
