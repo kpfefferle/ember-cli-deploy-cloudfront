@@ -2,7 +2,7 @@ machine:
   environment:
     PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
   node:
-    version: "stable"
+    version: "7.10.0"
 dependencies:
   override:
     - yarn install --no-lockfile
