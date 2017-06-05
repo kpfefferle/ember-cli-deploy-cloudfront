@@ -27,7 +27,7 @@
     "uuid": "^3.0.1"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "^4.0.2",
     "chai-as-promised": "^6.0.0",
     "ember-cli": "2.13.2",
     "ember-cli-release": "^1.0.0-beta.2",
