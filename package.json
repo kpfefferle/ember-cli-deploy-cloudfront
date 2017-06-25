@@ -31,7 +31,7 @@
     "chai-as-promised": "^7.0.0",
     "ember-cli": "2.13.2",
     "ember-cli-release": "^1.0.0-beta.2",
-    "eslint": "^4.0.0",
+    "eslint": "^4.1.0",
     "glob": "^7.1.2",
     "mocha": "^3.4.1"
   },
