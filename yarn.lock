@@ -847,9 +847,9 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
-chai-as-promised@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/chai-as-promised/-/chai-as-promised-7.0.0.tgz#c87ee613eaa196766393da6fbb4052f112acf675"
+chai-as-promised@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/chai-as-promised/-/chai-as-promised-7.1.0.tgz#5bc1be34e39e8555785945dd1085222f720577e7"
   dependencies:
     check-error "^1.0.2"
     eslint "^3.19.0"
