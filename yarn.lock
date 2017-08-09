@@ -1189,6 +1189,12 @@ core-object@^3.1.3:
   dependencies:
     chalk "^1.1.3"
 
+core-object@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/core-object/-/core-object-3.1.4.tgz#6df401e858124be9f7572f4c4a34c6150952d4b6"
+  dependencies:
+    chalk "^2.0.0"
+
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
