@@ -293,9 +293,9 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
 
-aws-sdk@^2.179.0:
-  version "2.179.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.179.0.tgz#48e07843c6ae83d6752e58547b168299f140cc11"
+aws-sdk@^2.182.0:
+  version "2.182.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.182.0.tgz#f769f3c34c92a0063389ffecaff9fd788743e4d1"
   dependencies:
     buffer "4.9.1"
     create-hash "^1.1.3"
