@@ -23,7 +23,7 @@
     "aws-sdk": "^2.186.0",
     "core-object": "^3.1.5",
     "ember-cli-deploy-plugin": "~0.2.9",
-    "rsvp": "^4.7.0",
+    "rsvp": "^4.8.1",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
