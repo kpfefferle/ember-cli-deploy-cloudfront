@@ -17,7 +17,8 @@
     "url": "https://github.com/kpfefferle/ember-cli-deploy-cloudfront.git"
   },
   "scripts": {
-    "test": "node tests/runner.js && ./node_modules/.bin/eslint index.js lib/* tests/**/*-test.js"
+    "lint:js": "./node_modules/.bin/eslint index.js lib/* tests/**/*-test.js",
+    "test": "node tests/runner.js"
   },
   "dependencies": {
     "aws-sdk": "^2.187.0",

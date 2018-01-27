@@ -1,0 +1,64 @@
+# .circleci/config.yml
+defaults: &defaults
+  docker:
+    - image: circleci/node:6
+      environment:
+        JOBS: 2
+  working_directory: ~/ember-cli-deploy-cloudfront
+
+version: 2
+jobs:
+  checkout_code:
+    <<: *defaults
+    steps:
+      - checkout
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  install_dependencies:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Yarn Install
+          command: yarn install --non-interactive --no-lockfile
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  lint_js:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Lint JS
+          command: yarn run lint:js
+
+  run_tests:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Run Tests
+          command: yarn test
+
+workflows:
+  version: 2
+  lint_and_test:
+    jobs:
+      - checkout_code
+      - install_dependencies:
+          requires:
+            - checkout_code
+      - lint_js:
+          requires:
+            - install_dependencies
+      - run_tests:
+          requires:
+            - install_dependencies
