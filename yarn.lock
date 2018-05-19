@@ -322,9 +322,9 @@ atob@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.0.tgz#ab2b150e51d7b122b9efc8d7340c06b6c41076bc"
 
-aws-sdk@^2.229.1:
-  version "2.229.1"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.229.1.tgz#6123c8acee0de534a0585e1375ee19c4de54a39e"
+aws-sdk@^2.243.1:
+  version "2.243.1"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.243.1.tgz#c47b05431637c572177a1814c724cae8a5ee3f49"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -335,7 +335,6 @@ aws-sdk@^2.229.1:
     url "0.10.3"
     uuid "3.1.0"
     xml2js "0.4.17"
-    xmlbuilder "4.2.1"
 
 aws-sign2@~0.6.0:
   version "0.6.0"
@@ -6065,7 +6064,7 @@ xml2js@0.4.17:
     sax ">=0.6.0"
     xmlbuilder "^4.1.0"
 
-xmlbuilder@4.2.1, xmlbuilder@^4.1.0:
+xmlbuilder@^4.1.0:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-4.2.1.tgz#aa58a3041a066f90eaa16c2f5389ff19f3f461a5"
   dependencies:
