@@ -5,6 +5,21 @@ var RSVP       = require('rsvp');
 var BasePlugin = require('ember-cli-deploy-plugin');
 var CloudFront = require('./lib/cloudfront');
 
+var _handleSingleDistribution = function(distribution, objectPaths, cloudfront, logger, errorMessageHandler) {
+  var options = {
+    objectPaths: objectPaths,
+    distribution: distribution
+  };
+
+  logger('preparing to create invalidation for CloudFront distribution `' + distribution + '`', { verbose: true });
+
+  return cloudfront.invalidate(options)
+    .then(function(invalidation) {
+      self.log('created CloudFront invalidation `' + invalidation + '` ok', { verbose: true });
+    })
+    .catch(errorMessageHandler);
+};
+
 module.exports = {
   name: 'ember-cli-deploy-cloudfront',
 
@@ -26,25 +41,23 @@ module.exports = {
       didActivate: function(/*context*/) {
         var self            = this;
 
-        var distribution    = this.readConfig('distribution');
+        var distributions    = this.readConfig('distribution');
         var objectPaths     = this.readConfig('objectPaths');
 
         var cloudfront = this.readConfig('invalidationClient') || new CloudFront({
           plugin: this
         });
-
-        var options = {
-          objectPaths: objectPaths,
-          distribution: distribution
-        };
-
-        this.log('preparing to create invalidation for CloudFront distribution `' + distribution + '`', { verbose: true });
-
-        return cloudfront.invalidate(options)
-          .then(function(invalidation) {
-            self.log('created CloudFront invalidation `' + invalidation + '` ok', { verbose: true });
-          })
-          .catch(this._errorMessage.bind(this));
+        
+        var logger = this.log.bind(this);
+        var errorMessageHandler = this._errorMessage.bind(this);
+        
+        if (!Array.isArray(distributions)) {
+          distributions = [distributions]
+        }
+        
+        return Promise.all(function (distribution) {
+          return _handleSingleDistribution(distribution, objectPaths, cloudfront, logger, errorMessageHandler);
+        });
       },
 
       _errorMessage: function(error) {
