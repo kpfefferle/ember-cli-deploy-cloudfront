@@ -33,18 +33,23 @@ module.exports = {
           plugin: this
         });
 
-        var options = {
-          objectPaths: objectPaths,
-          distribution: distribution
-        };
+        var distributions   = Array.isArray(distribution) ? distribution : [distribution];
+        var distributionInvalidations = distributions.map(function(distribution) {
+          var options = {
+            objectPaths: objectPaths,
+            distribution: distribution
+          };
 
-        this.log('preparing to create invalidation for CloudFront distribution `' + distribution + '`', { verbose: true });
+          self.log('preparing to create invalidation for CloudFront distribution `' + distribution + '`', { verbose: true });
 
-        return cloudfront.invalidate(options)
-          .then(function(invalidation) {
-            self.log('created CloudFront invalidation `' + invalidation + '` ok', { verbose: true });
-          })
-          .catch(this._errorMessage.bind(this));
+          return cloudfront.invalidate(options)
+            .then(function(invalidation) {
+              self.log('created CloudFront invalidation `' + invalidation + '` ok', { verbose: true });
+            })
+            .catch(self._errorMessage.bind(self));
+        });
+
+        return RSVP.Promise.all(distributionInvalidations);
       },
 
       _errorMessage: function(error) {

@@ -85,7 +85,7 @@ This requires both `accessKeyId` and `secretAccessKey` to be defined.
 
 ### distribution (`required`)
 
-The CloudFront distribution ID that should be invalidated.
+The CloudFront distribution ID that should be invalidated. May be specified as a string for a single distribution (most common) or as an array of strings for multiple distributions.
 
 *Default:* `undefined`
 
