@@ -8,20 +8,10 @@ defaults: &defaults
 
 version: 2
 jobs:
-  checkout_code:
-    <<: *defaults
-    steps:
-      - checkout
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
-
   install_dependencies:
     <<: *defaults
     steps:
-      - attach_workspace:
-          at: .
+      - checkout
       - run:
           name: Yarn Install
           command: yarn install --non-interactive --no-lockfile
@@ -52,10 +42,7 @@ workflows:
   version: 2
   lint_and_test:
     jobs:
-      - checkout_code
-      - install_dependencies:
-          requires:
-            - checkout_code
+      - install_dependencies
       - lint_js:
           requires:
             - install_dependencies
