@@ -6,7 +6,7 @@ var BasePlugin = require('ember-cli-deploy-plugin');
 var CloudFront = require('./lib/cloudfront');
 
 module.exports = {
-  name: 'ember-cli-deploy-cloudfront',
+  name: require('./package').name,
 
   createDeployPlugin: function(options) {
     var DeployPlugin = BasePlugin.extend({
