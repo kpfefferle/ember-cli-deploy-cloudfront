@@ -147,10 +147,6 @@ Ensure you have the minimum required permissions configured for the user (`acces
 
 The `cloudfront:CreateInvalidation` action is the only one necessary for this addon, though the more permissive `cloudfront:*` permission will also work. AWS does not currently allow CloudFront permissions to be limited by distribution, so the only accepted value for `Resource` is `*` (all distributions).
 
-## Running Tests
-
-- `yarn test`
-
 ## Why `ember build` and `ember test` don't work
 
 Since this is a node-only ember-cli addon, this package does not include many files and dependencies which are part of ember-cli's typical `ember build` and `ember test` processes.

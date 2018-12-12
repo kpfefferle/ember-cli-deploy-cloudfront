@@ -8,6 +8,7 @@
 /.eslintrc.js
 /.gitignore
 /.watchmanconfig
+/CONTRIBUTING.md
 /tests/
 /yarn.lock
 .gitkeep
