@@ -8,6 +8,7 @@
 /node_modules/
 
 # misc
+/.env*
 /.sass-cache
 /connect.lock
 /coverage/
