@@ -5,6 +5,7 @@
 # misc
 /.editorconfig
 /.ember-cli
+/.env*
 /.eslintrc.js
 /.gitignore
 /.watchmanconfig
