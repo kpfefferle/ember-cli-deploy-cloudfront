@@ -117,6 +117,12 @@ The client specified MUST implement a function called `createInvalidation`.
 
 *Default:* the default CloudFront library is `aws-sdk`
 
+### waitForInvalidation 
+
+If set to `true` the deployment will wait until AWS reports invalidation complete state. This ensures new version is available online after the pipeline is finished. This can be useful to know, for example before running further tests against deployed production. Note that it may take several minutes or more for the invalidation to fully complete, so only use this option if you *really* need to wait for the invalidation to complete. 
+
+*Default:* `false`
+
 ## Disable in Selected Environments
 
 If your application doesn't need CloudFront invalidation in an environment where you do need to run other activation hooks, it is possible to whitelist the plugins that you *do* want ember-cli-deploy to run. For an application using the ember-cli-deploy-aws-pack for example, the whitelist would look like this when excluding ember-cli-deploy-cloudfront:

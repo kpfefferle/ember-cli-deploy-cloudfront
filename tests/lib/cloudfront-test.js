@@ -2,10 +2,11 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 var assert = require('../helpers/assert');
+var RSVP = require('rsvp');
 
 
 describe('cloudfront', function() {
-  var CloudFront, mockUi, cloudfrontClient, plugin, subject;
+  var CloudFront, validParams, validOptions, cloudfrontClient, plugin, subject;
 
   before(function() {
     process.env['AWS_ACCESS_KEY_ID'] = 'set_via_env_var';
@@ -31,6 +32,7 @@ describe('cloudfront', function() {
           return cloudfrontClient;
         }
       },
+      log: function noop() {},
     };
     subject = new CloudFront({
       plugin: plugin
@@ -50,7 +52,6 @@ describe('cloudfront', function() {
 
     context('using the aws-sdk CloudFront client', function() {
       beforeEach(function() {
-        awsClient = {};
         plugin.readConfig = function(propertyName) {};
         subject = new CloudFront({plugin: plugin});
       });
@@ -125,6 +126,32 @@ describe('cloudfront', function() {
             assert.deepEqual(cloudfrontParams.InvalidationBatch.Paths.Items, validOptions.objectPaths);
           });
       });
+
+      describe('waiting for invalidation', function() {
+        beforeEach(function () {
+          subject = new CloudFront({
+            plugin: plugin
+          });
+          validOptions.waitForInvalidation = true;
+        });
+
+        it('should not quit until validation is finished', function () {
+          var callback = function () {};
+          cloudfrontClient.waitFor = function(state, params, cb) {
+            callback = cb;
+          };
+
+          var promise = subject.invalidate(validOptions);
+
+          assert.isUndefined(promise._result);
+
+          callback(null, validResponse);
+          assert.instanceOf(promise, RSVP.Promise);
+
+          assert.equal(promise._result, 'ID')
+        });
+      })
     });
+
   });
 });
