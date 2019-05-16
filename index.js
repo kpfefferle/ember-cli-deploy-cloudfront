@@ -46,8 +46,8 @@ module.exports = {
           self.log('preparing to create invalidation for CloudFront distribution `' + distribution + '`', { verbose: true });
 
           return cloudfront.invalidate(options)
-            .then(function() {
-              self.log('invalidation completed', { verbose: true });
+            .then(function(invalidationId) {
+              self.log('invalidation process finished for invalidation ' + invalidationId, { verbose: true });
             })
             .catch(self._errorMessage.bind(self));
         });
