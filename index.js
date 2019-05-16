@@ -19,7 +19,8 @@ module.exports = {
         },
         cloudfrontClient: function(context) {
           return context.cloudfrontClient; // if you want to provide your own CloudFront client to be used instead of one from aws-sdk
-        }
+        },
+        waitForInvalidation: false,
       },
       requiredConfig: ['distribution', 'region'],
 
@@ -28,6 +29,7 @@ module.exports = {
 
         var distribution    = this.readConfig('distribution');
         var objectPaths     = this.readConfig('objectPaths');
+        var waitForInvalidation = this.readConfig('waitForInvalidation')
 
         var cloudfront = this.readConfig('invalidationClient') || new CloudFront({
           plugin: this
@@ -37,14 +39,15 @@ module.exports = {
         var distributionInvalidations = distributions.map(function(distribution) {
           var options = {
             objectPaths: objectPaths,
-            distribution: distribution
+            distribution: distribution,
+            waitForInvalidation: waitForInvalidation
           };
 
           self.log('preparing to create invalidation for CloudFront distribution `' + distribution + '`', { verbose: true });
 
           return cloudfront.invalidate(options)
-            .then(function(invalidation) {
-              self.log('created CloudFront invalidation `' + invalidation + '` ok', { verbose: true });
+            .then(function(invalidationId) {
+              self.log('invalidation process finished for invalidation ' + invalidationId, { verbose: true });
             })
             .catch(self._errorMessage.bind(self));
         });
