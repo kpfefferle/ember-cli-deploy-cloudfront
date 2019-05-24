@@ -119,7 +119,7 @@ The client specified MUST implement a function called `createInvalidation`.
 
 ### waitForInvalidation 
 
-If set to `true` the deployment will wait until AWS reports invalidation complete state. This ensures new version is available online after the pipeline is finished. This can be useful to know, for example before running further tests against deployed production. Note that it may take several minutes or more for the invalidation to fully complete, so only use this option if you *really* need to wait for the invalidation to complete. 
+If set to `true` the deployment will wait until AWS reports invalidation complete state. This ensures new version is available online after the pipeline is finished. This can be useful to know, for example before running further tests against deployed production. Note that it may take several minutes or more for the invalidation to fully complete, so only use this option if you *really* need to wait for the invalidation to complete. Note that to use this option you'll need to have IAM permissions for `"cloudfront:GetInvalidation"`. See Minimum CloudFront Permissions below.
 
 *Default:* `false`
 
@@ -151,7 +151,25 @@ Ensure you have the minimum required permissions configured for the user (`acces
 }
 ```
 
-The `cloudfront:CreateInvalidation` action is the only one necessary for this addon, though the more permissive `cloudfront:*` permission will also work. AWS does not currently allow CloudFront permissions to be limited by distribution, so the only accepted value for `Resource` is `*` (all distributions).
+If you have enabled the `waitForInvalidation` option above you'll need to ensure you have the following permissions as a minimum:
+
+
+```json
+{
+   "Version": "2012-10-17",
+   "Statement":[{
+      "Effect":"Allow",
+      "Action":[
+        "cloudfront:CreateInvalidation",
+        "cloudfront:GetInvalidation"
+       ],
+      "Resource":"*"
+      }
+   ]
+}
+```
+
+The `cloudfront:CreateInvalidation` action is the only one necessary for this addon (unless you've enabled the `waitForInvalidation` option above), though the more permissive `cloudfront:*` permission will also work. AWS does not currently allow CloudFront permissions to be limited by distribution, so the only accepted value for `Resource` is `*` (all distributions).
 
 ## Why `ember build` and `ember test` don't work
 
