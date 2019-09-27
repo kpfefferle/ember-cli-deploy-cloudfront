@@ -7,6 +7,7 @@
 /.ember-cli
 /.env*
 /.eslintrc.js
+/.git/
 /.gitignore
 /.watchmanconfig
 /CONTRIBUTING.md
