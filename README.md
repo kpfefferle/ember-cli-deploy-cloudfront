@@ -1,4 +1,6 @@
-# ember-cli-deploy-cloudfront [![CircleCI](https://circleci.com/gh/kpfefferle/ember-cli-deploy-cloudfront.svg?style=svg)](https://circleci.com/gh/kpfefferle/ember-cli-deploy-cloudfront)
+# ember-cli-deploy-cloudfront
+
+[![Ember CI](https://github.com/kpfefferle/ember-cli-deploy-cloudfront/workflows/Node%20CI/badge.svg)](https://github.com/kpfefferle/ember-cli-deploy-cloudfront/actions)
 
 [![Ember Observer Score](https://emberobserver.com/badges/ember-cli-deploy-cloudfront.svg)](https://emberobserver.com/addons/ember-cli-deploy-cloudfront)
 
@@ -117,7 +119,7 @@ The client specified MUST implement a function called `createInvalidation`.
 
 *Default:* the default CloudFront library is `aws-sdk`
 
-### waitForInvalidation 
+### waitForInvalidation
 
 If set to `true` the deployment will wait until AWS reports invalidation complete state. This ensures new version is available online after the pipeline is finished. This can be useful to know, for example before running further tests against deployed production. Note that it may take several minutes or more for the invalidation to fully complete, so only use this option if you *really* need to wait for the invalidation to complete. Note that to use this option you'll need to have IAM permissions for `"cloudfront:GetInvalidation"`. See Minimum CloudFront Permissions below.
 
