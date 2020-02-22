@@ -1,0 +1,21 @@
+name: Node CI
+on: push
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - name: Install Dependencies
+        run: yarn install
+      - name: Run Tests
+        run: |
+          yarn run lint:js
+          yarn test
+        env:
+          CI: true
