@@ -22,7 +22,7 @@
     "core-object": "^3.1.5",
     "ember-cli-deploy-plugin": "~0.2.9",
     "rsvp": "^4.8.3",
-    "uuid": "^3.3.2"
+    "uuid": "^7.0.1"
   },
   "devDependencies": {
     "chai": "^4.1.2",
