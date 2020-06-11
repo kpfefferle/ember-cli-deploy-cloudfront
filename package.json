@@ -31,7 +31,7 @@
     "ember-cli-release": "^1.0.0-beta.2",
     "eslint": "^7.0.0",
     "glob": "^7.1.2",
-    "mocha": "^7.0.0"
+    "mocha": "^8.0.1"
   },
   "engines": {
     "node": "10.* || >= 12"
