@@ -11,6 +11,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
+      - name: Node Modules Cache
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
       - name: Install Dependencies
         run: yarn install
       - name: Run Tests
