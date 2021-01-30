@@ -5,7 +5,7 @@ var glob = require('glob');
 var Mocha = require('mocha');
 
 var mocha = new Mocha({
-  reporter: 'spec'
+  reporter: 'spec',
 });
 
 var arg = process.argv[2];
@@ -21,8 +21,8 @@ if (arg === 'all') {
   addFiles(mocha, '**/*-test-slow.js');
 }
 
-mocha.run(function(failures) {
-  process.on('exit', function() {
+mocha.run(function (failures) {
+  process.on('exit', function () {
     process.exit(failures);
   });
 });
