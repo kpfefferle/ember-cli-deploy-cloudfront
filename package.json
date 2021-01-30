@@ -14,7 +14,8 @@
   },
   "repository": "https://github.com/kpfefferle/ember-cli-deploy-cloudfront",
   "scripts": {
-    "lint:js": "eslint index.js lib/* tests/**/*-test.js",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
     "test": "node tests/runner.js"
   },
   "dependencies": {
@@ -27,11 +28,15 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
-    "ember-cli": "~3.22.0",
+    "ember-cli": "~3.24.0",
     "ember-cli-release": "^1.0.0-beta.2",
     "eslint": "^7.1.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "glob": "^7.1.2",
-    "mocha": "^8.0.1"
+    "mocha": "^8.0.1",
+    "prettier": "^2.2.1"
   },
   "engines": {
     "node": "10.* || >= 12"
