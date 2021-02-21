@@ -30,7 +30,7 @@
     "chai-as-promised": "^7.1.1",
     "ember-cli": "~3.24.0",
     "eslint": "^7.1.0",
-    "eslint-config-prettier": "^7.1.0",
+    "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "glob": "^7.1.2",
