@@ -1,0 +1,26 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: aws-sdk
+    versions:
+    - 2.875.0
+    - 2.876.0
+    - 2.877.0
+    - 2.878.0
+    - 2.881.0
+    - 2.889.0
+    - 2.893.0
+  - dependency-name: ember-cli
+    versions:
+    - 3.25.1
+    - 3.25.3
+    - 3.26.0
+  - dependency-name: chai
+    versions:
+    - 4.3.2
