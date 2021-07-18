@@ -10,8 +10,11 @@
 /.eslintrc.js
 /.git/
 /.gitignore
+/.prettierignore
+/.prettierrc.js
 /.watchmanconfig
 /CONTRIBUTING.md
 /tests/
+/yarn-error.log
 /yarn.lock
 .gitkeep
