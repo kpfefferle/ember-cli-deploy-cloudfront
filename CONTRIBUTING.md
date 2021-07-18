@@ -9,6 +9,7 @@
 ## Linting
 
 * `yarn run lint:js`
+* `yarn run lint:js:fix`
 
 ## Running tests
 
