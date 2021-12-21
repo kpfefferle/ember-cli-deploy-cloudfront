@@ -1,6 +1,6 @@
 # ember-cli-deploy-cloudfront
 
-[![Ember CI](https://github.com/kpfefferle/ember-cli-deploy-cloudfront/workflows/Node%20CI/badge.svg)](https://github.com/kpfefferle/ember-cli-deploy-cloudfront/actions)
+[![CI](https://github.com/kpfefferle/ember-cli-deploy-cloudfront/workflows/Node%20CI/badge.svg)](https://github.com/kpfefferle/ember-cli-deploy-cloudfront/actions)
 
 [![Ember Observer Score](https://emberobserver.com/badges/ember-cli-deploy-cloudfront.svg)](https://emberobserver.com/addons/ember-cli-deploy-cloudfront)
 
