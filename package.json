@@ -19,7 +19,8 @@
     "test": "node tests/runner.js"
   },
   "dependencies": {
-    "aws-sdk": "^2.458.0",
+    "@aws-sdk/client-cloudfront": "^3.850.0",
+    "@aws-sdk/credential-providers": "^3.848.0",
     "core-object": "^3.1.5",
     "ember-cli-deploy-plugin": "~0.2.9",
     "rsvp": "^4.8.3",
@@ -29,12 +30,9 @@
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "eslint": "^8.0.0",
-    "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "glob": "^10.2.1",
-    "mocha": "^11.0.1",
-    "prettier": "^2.2.1"
+    "mocha": "^11.0.1"
   },
   "engines": {
     "node": "16.* || 18.* || >= 20"

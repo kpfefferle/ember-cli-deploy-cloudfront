@@ -1,10 +1,10 @@
 module.exports = {
   root: true,
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  extends: ['eslint:recommended'],
   env: {
     browser: true,
   },
@@ -14,7 +14,6 @@ module.exports = {
     {
       files: [
         '.eslintrc.js',
-        '.prettierrc.js',
         'index.js',
         'blueprints/*/index.js',
         'config/**/*.js',

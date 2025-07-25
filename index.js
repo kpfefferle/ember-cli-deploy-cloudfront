@@ -1,15 +1,15 @@
 /* eslint-env node */
 'use strict';
 
-var RSVP = require('rsvp');
-var BasePlugin = require('ember-cli-deploy-plugin');
-var CloudFront = require('./lib/cloudfront');
+const RSVP = require('rsvp');
+const BasePlugin = require('ember-cli-deploy-plugin');
+const CloudFront = require('./lib/cloudfront');
 
 module.exports = {
   name: require('./package').name,
 
   createDeployPlugin: function (options) {
-    var DeployPlugin = BasePlugin.extend({
+    const DeployPlugin = BasePlugin.extend({
       name: options.name,
       defaultConfig: {
         region: 'us-east-1',
@@ -25,47 +25,36 @@ module.exports = {
       requiredConfig: ['distribution', 'region'],
 
       didActivate: function (/*context*/) {
-        var self = this;
+        const distribution = this.readConfig('distribution');
+        const objectPaths = this.readConfig('objectPaths');
+        const waitForInvalidation = this.readConfig('waitForInvalidation');
 
-        var distribution = this.readConfig('distribution');
-        var objectPaths = this.readConfig('objectPaths');
-        var waitForInvalidation = this.readConfig('waitForInvalidation');
-
-        var cloudfront =
+        const cloudfront =
           this.readConfig('invalidationClient') ||
           new CloudFront({
             plugin: this,
           });
 
-        var distributions = Array.isArray(distribution)
+        const distributions = Array.isArray(distribution)
           ? distribution
           : [distribution];
-        var distributionInvalidations = distributions.map(function (
-          distribution
-        ) {
-          var options = {
+        const distributionInvalidations = distributions.map((currDistribution) => {
+          const options = {
             objectPaths: objectPaths,
-            distribution: distribution,
+            distribution: currDistribution,
             waitForInvalidation: waitForInvalidation,
           };
 
-          self.log(
-            'preparing to create invalidation for CloudFront distribution `' +
-              distribution +
-              '`',
-            { verbose: true }
-          );
+          this.log(`preparing to create invalidation for CloudFront distribution '${currDistribution}'`, { verbose: true });
 
           return cloudfront
             .invalidate(options)
-            .then(function (invalidationId) {
-              self.log(
-                'invalidation process finished for invalidation ' +
-                  invalidationId,
-                { verbose: true }
-              );
+            .then((invalidationId) => {
+              this.log(`invalidation process finished for invalidation ${invalidationId}`, { verbose: true });
             })
-            .catch(self._errorMessage.bind(self));
+            .catch((error) => {
+              this._errorMessage(error);
+            });
         });
 
         return RSVP.Promise.all(distributionInvalidations);

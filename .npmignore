@@ -10,8 +10,6 @@
 /.git/
 /.github/
 /.gitignore
-/.prettierignore
-/.prettierrc.js
 /.watchmanconfig
 /CONTRIBUTING.md
 /tests/
