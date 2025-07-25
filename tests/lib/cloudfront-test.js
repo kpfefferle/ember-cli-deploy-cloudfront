@@ -1,34 +1,36 @@
 /* eslint-env node */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
+/* global describe, before, beforeEach, context, it */
 var assert = require('../helpers/assert');
 var RSVP = require('rsvp');
 
-describe('cloudfront', function () {
-  var CloudFront, validParams, validOptions, cloudfrontClient, plugin, subject;
+describe('cloudfront', () => {
+  var CloudFront, validResponse, validOptions, customCloudfrontClient, plugin, subject;
 
-  before(function () {
+  before(() => {
     process.env['AWS_ACCESS_KEY_ID'] = 'set_via_env_var';
     process.env['AWS_SECRET_ACCESS_KEY'] = 'set_via_env_var';
 
     CloudFront = require('../../lib/cloudfront');
   });
 
-  beforeEach(function () {
+  beforeEach(() => {
     validResponse = {
       Invalidation: {
         Id: 'ID',
       },
     };
-    cloudfrontClient = {
-      createInvalidation: function (params, cb) {
+    customCloudfrontClient = {
+      send: function (params, cb) {
         cb(null, validResponse);
       },
     };
     plugin = {
       readConfig: function (propertyName) {
-        if (propertyName === 'cloudfrontClient') {
-          return cloudfrontClient;
+        if (
+          propertyName === 'accessKeyId' ||
+          propertyName === 'secretAccessKey'
+        ) {
+          return 'set_via_config';
         }
       },
       log: function noop() {},
@@ -42,124 +44,122 @@ describe('cloudfront', function () {
     };
   });
 
-  describe('#init', function () {
-    context('with a custom CloudFront client', function () {
-      it('uses the custom client', function () {
-        assert.equal(cloudfrontClient, subject._client);
-      });
-    });
-
-    context('using the aws-sdk CloudFront client', function () {
-      beforeEach(function () {
-        plugin.readConfig = function (propertyName) {};
+  describe('#init', () => {
+    context('with a custom CloudFront client', () => {
+      beforeEach(() => {
+        plugin.readConfig = function (propertyName) {
+          if (propertyName === 'cloudfrontClient') {
+            return customCloudfrontClient;
+          }
+        };
         subject = new CloudFront({ plugin: plugin });
       });
 
-      it('uses the AWS client', function () {
-        var AWS = require('aws-sdk');
-        assert.ok(subject._client instanceof AWS.CloudFront);
+      it('uses the custom client', () => {
+        assert.equal(customCloudfrontClient, subject._client);
+      });
+    });
+
+    context('using the aws-sdk CloudFront client', () => {
+      it('uses the AWS client', () => {
+        const awsClient = require('@aws-sdk/client-cloudfront');
+        assert.ok(subject._client instanceof awsClient.CloudFrontClient);
       });
 
-      context('with credentials in plugin config', function () {
-        beforeEach(function () {
-          plugin.readConfig = function (propertyName) {
-            if (
-              propertyName === 'accessKeyId' ||
-              propertyName === 'secretAccessKey'
-            ) {
-              return 'set_via_config';
-            }
+      context('with credentials in plugin config', () => {
+        it('uses the configured credentials', () => {
+          const promise = subject._client.config.credentials();
+
+          return assert.isFulfilled(promise).then(function (credential) {
+            assert.equal(
+              'set_via_config',
+              credential.accessKeyId
+            );
+            assert.equal(
+              'set_via_config',
+              credential.secretAccessKey
+            );
+
+          });
+        });
+      });
+
+      context('with no credentials in the plugin config', () => {
+        beforeEach(() => {
+          plugin.readConfig = function () {};
+        });
+
+        it('throws missing credentials error', () => {
+          const initCloudFront = () => {
+            new CloudFront({ plugin: plugin });
           };
-          subject = new CloudFront({ plugin: plugin });
-        });
-
-        it('uses the configured credentials', function () {
-          assert.equal(
-            'set_via_config',
-            subject._client.config.credentials.accessKeyId
-          );
-          assert.equal(
-            'set_via_config',
-            subject._client.config.credentials.secretAccessKey
-          );
-        });
-      });
-
-      context('with no credentials in the plugin config', function () {
-        beforeEach(function () {
-          plugin.readConfig = function (propertyName) {};
-          subject = new CloudFront({ plugin: plugin });
-        });
-
-        it('falls back to default AWS credential resolution', function () {
-          assert.equal(
-            'set_via_env_var',
-            subject._client.config.credentials.accessKeyId
-          );
-          assert.equal(
-            'set_via_env_var',
-            subject._client.config.credentials.secretAccessKey
-          );
+          assert.throws(initCloudFront, /missing credentials/);
         });
       });
     });
   });
 
-  describe('#invalidate', function () {
-    it('resolves if invalidation succeeds', function () {
-      var promises = subject.invalidate(validOptions);
+  describe('#invalidate', () => {
+    beforeEach(() => {
+      plugin.readConfig = function (propertyName) {
+        if (propertyName === 'cloudfrontClient') {
+          return customCloudfrontClient;
+        }
+      };
+      subject = new CloudFront({ plugin: plugin });
+    });
+
+    it('resolves if invalidation succeeds', () => {
+      const promises = subject.invalidate(validOptions);
 
       return assert.isFulfilled(promises);
     });
 
-    it('rejects if invalidation fails', function () {
-      cloudfrontClient.createInvalidation = function (params, cb) {
+    it('rejects if invalidation fails', () => {
+      customCloudfrontClient.send = function (params, cb) {
         cb('error creating invalidation');
       };
 
-      var promises = subject.invalidate(validOptions);
+      const promises = subject.invalidate(validOptions);
 
       return assert.isRejected(promises);
     });
 
-    describe('creating the invalidation with CloudFront', function () {
-      it('sends the correct params', function () {
-        var cloudfrontParams;
-        cloudfrontClient.createInvalidation = function (params, cb) {
+    describe('creating the invalidation with CloudFront', () => {
+      it('sends the correct params', () => {
+        let cloudfrontParams;
+        customCloudfrontClient.send = (params, cb) => {
           cloudfrontParams = params;
           cb(null, validResponse);
         };
 
         var promises = subject.invalidate(validOptions);
 
-        return assert.isFulfilled(promises).then(function () {
+        return assert.isFulfilled(promises).then(() => {
           assert.equal(
-            cloudfrontParams.DistributionId,
+            cloudfrontParams.input.DistributionId,
             validOptions.distribution
           );
-          assert.isDefined(cloudfrontParams.InvalidationBatch.CallerReference);
+          assert.isDefined(cloudfrontParams.input.InvalidationBatch.CallerReference);
           assert.equal(
-            cloudfrontParams.InvalidationBatch.Paths.Quantity,
+            cloudfrontParams.input.InvalidationBatch.Paths.Quantity,
             validOptions.objectPaths.length
           );
           assert.deepEqual(
-            cloudfrontParams.InvalidationBatch.Paths.Items,
+            cloudfrontParams.input.InvalidationBatch.Paths.Items,
             validOptions.objectPaths
           );
         });
       });
 
-      describe('waiting for invalidation', function () {
-        beforeEach(function () {
-          subject = new CloudFront({
-            plugin: plugin,
-          });
+      describe('waiting for invalidation', () => {
+        beforeEach(() => {
           validOptions.waitForInvalidation = true;
         });
 
-        it('should not quit until validation is finished', function () {
-          var callback = function () {};
-          cloudfrontClient.waitFor = function (state, params, cb) {
+        it('should not quit until validation is finished', () => {
+          let callback = () => {};
+          customCloudfrontClient.waitFor = function (state, params, cb) {
             callback = cb;
           };
 
