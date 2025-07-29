@@ -56,9 +56,7 @@ describe('cloudfront', function () {
       });
 
       it('uses the AWS client', function () {
-        var {
-          CloudFront,
-        } = require('@aws-sdk/client-cloudfront');
+        var { CloudFront } = require('@aws-sdk/client-cloudfront');
         assert.ok(subject._client instanceof CloudFront);
       });
 
@@ -78,14 +76,8 @@ describe('cloudfront', function () {
         it('uses the configured credentials', function () {
           let promise = subject._client.config.credentials();
           return assert.isFulfilled(promise).then(function (credentials) {
-            assert.equal(
-              'set_via_config',
-              credentials.accessKeyId
-            );
-            assert.equal(
-              'set_via_config',
-              credentials.secretAccessKey
-            );
+            assert.equal('set_via_config', credentials.accessKeyId);
+            assert.equal('set_via_config', credentials.secretAccessKey);
           });
         });
       });
@@ -99,14 +91,8 @@ describe('cloudfront', function () {
         it('falls back to default AWS credential resolution', function () {
           let promise = subject._client.config.credentials();
           return assert.isFulfilled(promise).then(function (credentials) {
-            assert.equal(
-              'set_via_env_var',
-              credentials.accessKeyId
-            );
-            assert.equal(
-              'set_via_env_var',
-              credentials.secretAccessKey
-            );
+            assert.equal('set_via_env_var', credentials.accessKeyId);
+            assert.equal('set_via_env_var', credentials.secretAccessKey);
           });
         });
       });
