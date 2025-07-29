@@ -56,8 +56,10 @@ describe('cloudfront', function () {
       });
 
       it('uses the AWS client', function () {
-        var AWS = require('aws-sdk');
-        assert.ok(subject._client instanceof AWS.CloudFront);
+        var {
+          CloudFront,
+        } = require('@aws-sdk/client-cloudfront');
+        assert.ok(subject._client instanceof CloudFront);
       });
 
       context('with credentials in plugin config', function () {
@@ -74,14 +76,17 @@ describe('cloudfront', function () {
         });
 
         it('uses the configured credentials', function () {
-          assert.equal(
-            'set_via_config',
-            subject._client.config.credentials.accessKeyId
-          );
-          assert.equal(
-            'set_via_config',
-            subject._client.config.credentials.secretAccessKey
-          );
+          let promise = subject._client.config.credentials();
+          return assert.isFulfilled(promise).then(function (credentials) {
+            assert.equal(
+              'set_via_config',
+              credentials.accessKeyId
+            );
+            assert.equal(
+              'set_via_config',
+              credentials.secretAccessKey
+            );
+          });
         });
       });
 
@@ -92,14 +97,17 @@ describe('cloudfront', function () {
         });
 
         it('falls back to default AWS credential resolution', function () {
-          assert.equal(
-            'set_via_env_var',
-            subject._client.config.credentials.accessKeyId
-          );
-          assert.equal(
-            'set_via_env_var',
-            subject._client.config.credentials.secretAccessKey
-          );
+          let promise = subject._client.config.credentials();
+          return assert.isFulfilled(promise).then(function (credentials) {
+            assert.equal(
+              'set_via_env_var',
+              credentials.accessKeyId
+            );
+            assert.equal(
+              'set_via_env_var',
+              credentials.secretAccessKey
+            );
+          });
         });
       });
     });
