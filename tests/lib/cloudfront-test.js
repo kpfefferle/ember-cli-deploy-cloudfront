@@ -87,13 +87,21 @@ describe('cloudfront', () => {
       context('with no credentials in the plugin config', () => {
         beforeEach(() => {
           plugin.readConfig = function () {};
+          subject = new CloudFront({ plugin: plugin });
         });
 
-        it('throws missing credentials error', () => {
-          const initCloudFront = () => {
-            new CloudFront({ plugin: plugin });
-          };
-          assert.throws(initCloudFront, /missing credentials/);
+        it('falls back to default AWS credential resolution', () => {
+          const promise = subject._client.initConfig.credentials();
+          return assert.isFulfilled(promise).then(function (credential) {
+            assert.equal(
+              'set_via_env_var',
+              credential.accessKeyId
+            );
+            assert.equal(
+              'set_via_env_var',
+              credential.secretAccessKey
+            );
+          });
         });
       });
     });

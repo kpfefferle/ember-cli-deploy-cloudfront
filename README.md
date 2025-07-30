@@ -109,15 +109,15 @@ The client used to create the invalidation. This allows the user the ability to 
 
 The client specified MUST implement a function called `invalidate`.
 
-*Default:* the upload client provided by ember-cli-deploy-cloudfront
+*Default:* the invalidation client provided by ember-cli-deploy-cloudfront
 
 ### cloudfrontClient
 
 The underlying CloudFront library used to create the invalidation with CloudFront. This allows the user to use the default invalidation client provided by this plugin but switch out the underlying library that is used to actually create the invalidation.
 
-The client specified MUST implement a function called `createInvalidation`.
+The client specified MUST implement a function called `send` which receives two params: a CreateInvalidationCommand and a Promise with reject and resolve functions.
 
-*Default:* the default CloudFront library is `aws-sdk`
+*Default:* the default CloudFront library is `@aws-sdk/client-cloudfront`
 
 ### waitForInvalidation
 
