@@ -19,7 +19,8 @@
     "test": "node tests/runner.js"
   },
   "dependencies": {
-    "aws-sdk": "^2.458.0",
+    "@aws-sdk/client-cloudfront": "^3.855.0",
+    "@aws-sdk/credential-providers": "^3.855.0",
     "core-object": "^3.1.5",
     "ember-cli-deploy-plugin": "~0.2.9",
     "rsvp": "^4.8.3",
