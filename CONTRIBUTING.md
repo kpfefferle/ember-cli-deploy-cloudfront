@@ -4,13 +4,13 @@
 
 * `git clone https://github.com/kpfefferle/ember-cli-deploy-cloudfront.git`
 * `cd ember-cli-deploy-cloudfront`
-* `yarn install`
+* `pnpm install`
 
 ## Linting
 
-* `yarn run lint:js`
-* `yarn run lint:js:fix`
+* `pnpm lint:js`
+* `pnpm lint:js:fix`
 
 ## Running tests
 
-* `yarn test`
+* `pnpm test`
