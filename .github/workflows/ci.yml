@@ -17,17 +17,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: volta-cli/action@v4
         with:
-          node-version: 18.x
-          cache: yarn
+          node-version: 18
+      - name: Install pnpm
+        run: volta install pnpm@10
       - name: Install Dependencies
-        run: yarn install
+        run: pnpm install
       - name: Run Tests
         run: |
-          yarn run lint:js
-          yarn test
+          pnpm lint:js
+          pnpm test
         env:
           CI: true
