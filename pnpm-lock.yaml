@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@aws-sdk/client-cloudfront':
         specifier: ^3.855.0
-        version: 3.1015.0
+        version: 3.1016.0
       '@aws-sdk/credential-providers':
         specifier: ^3.855.0
-        version: 3.1015.0
+        version: 3.1016.0
       core-object:
         specifier: ^3.1.5
         version: 3.1.5
@@ -70,12 +70,12 @@ packages:
   '@aws-crypto/util@5.2.0':
     resolution: {integrity: sha512-4RkU9EsI6ZpBve5fseQlGNUWKMa1RLPQ1dnjnQoe07ldfIzcsGb5hC5W0Dm7u423KWzawlrpbjXBrXCEv9zazQ==}
 
-  '@aws-sdk/client-cloudfront@3.1015.0':
-    resolution: {integrity: sha512-R1usvnjjGk2Qj/HlAScYI/R0A1+RHLIrARyALyZgP4anb+hBgsGkyk/VpK71xFyE520DK7Qy34T52xj7/qyPsg==}
+  '@aws-sdk/client-cloudfront@3.1016.0':
+    resolution: {integrity: sha512-S9VuGucSweGdAFTAEClun4vnyHq1k6bFHi+EGNJnrssQ/hFMLQEOQupQChLmbIHT4dKoInaAAsUh5cvMSzbK0g==}
     engines: {node: '>=20.0.0'}
 
-  '@aws-sdk/client-cognito-identity@3.1015.0':
-    resolution: {integrity: sha512-YTxPmgqF0zEVR2AVZVmvrqhHnPSeA1wZk5uNQaTPVPGZBrwxAoEBMEQvneOnRLjpAiP+T4xggsg6F5nBwfoTRQ==}
+  '@aws-sdk/client-cognito-identity@3.1016.0':
+    resolution: {integrity: sha512-o3FxswkAKze0XzCcSsCVgdnLYAlilX6L8770cLWjNYsRxKn7TjydpHF0RKN5DkILZ87A/faMv+Z2FAKJVW0VCA==}
     engines: {node: '>=20.0.0'}
 
   '@aws-sdk/core@3.973.24':
@@ -118,8 +118,8 @@ packages:
     resolution: {integrity: sha512-J6H4R1nvr3uBTqD/EeIPAskrBtET4WFfNhpFySr2xW7bVZOXpQfPjrLSIx65jcNjBmLXzWq8QFLdVoGxiGG/SA==}
     engines: {node: '>=20.0.0'}
 
-  '@aws-sdk/credential-providers@3.1015.0':
-    resolution: {integrity: sha512-CUGBPLpIuTzIF0FhUWOZNaZiOvQEAevQ6wGreC2XADmJ9bg1xVEcPZo8XcQmmsOZqTp3oFsRiFdst/qHKlyEkA==}
+  '@aws-sdk/credential-providers@3.1016.0':
+    resolution: {integrity: sha512-D2l7HBvI1V3I/pVugAF1AqkIKH4iwiDyG5wmXWezl8AO/3KjjpDTZhI6goMO09Q6BPnyLVC/PM3gLo78V+q8yA==}
     engines: {node: '>=20.0.0'}
 
   '@aws-sdk/middleware-host-header@3.972.8':
@@ -1187,7 +1187,7 @@ snapshots:
       '@smithy/util-utf8': 2.3.0
       tslib: 2.8.1
 
-  '@aws-sdk/client-cloudfront@3.1015.0':
+  '@aws-sdk/client-cloudfront@3.1016.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
@@ -1233,7 +1233,7 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/client-cognito-identity@3.1015.0':
+  '@aws-sdk/client-cognito-identity@3.1016.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
@@ -1407,9 +1407,9 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/credential-providers@3.1015.0':
+  '@aws-sdk/credential-providers@3.1016.0':
     dependencies:
-      '@aws-sdk/client-cognito-identity': 3.1015.0
+      '@aws-sdk/client-cognito-identity': 3.1016.0
       '@aws-sdk/core': 3.973.24
       '@aws-sdk/credential-provider-cognito-identity': 3.972.17
       '@aws-sdk/credential-provider-env': 3.972.22
