@@ -131,16 +131,16 @@ describe('cloudfront', function () {
         return assert.isFulfilled(promises).then(function () {
           assert.equal(
             cloudfrontParams.DistributionId,
-            validOptions.distribution
+            validOptions.distribution,
           );
           assert.isDefined(cloudfrontParams.InvalidationBatch.CallerReference);
           assert.equal(
             cloudfrontParams.InvalidationBatch.Paths.Quantity,
-            validOptions.objectPaths.length
+            validOptions.objectPaths.length,
           );
           assert.deepEqual(
             cloudfrontParams.InvalidationBatch.Paths.Items,
-            validOptions.objectPaths
+            validOptions.objectPaths,
           );
         });
       });
