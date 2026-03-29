@@ -1,5 +1,3 @@
-/* eslint-env node */
-/* eslint-disable no-undef */
 import assert from './helpers/assert.mjs';
 import plugin from '../index.js';
 import BasePlugin from 'ember-cli-deploy-plugin';

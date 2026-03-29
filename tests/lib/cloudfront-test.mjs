@@ -1,5 +1,3 @@
-/* eslint-env node */
-/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import assert from '../helpers/assert.mjs';
 import RSVP from 'rsvp';
@@ -7,7 +5,12 @@ import LibCloudFront from '../../lib/cloudfront.js';
 import { CloudFront as AWSCloudFront } from '@aws-sdk/client-cloudfront';
 
 describe('cloudfront', function () {
-  var validParams, validOptions, validResponse, cloudfrontClient, plugin, subject;
+  var validParams,
+    validOptions,
+    validResponse,
+    cloudfrontClient,
+    plugin,
+    subject;
 
   before(function () {
     process.env['AWS_ACCESS_KEY_ID'] = 'set_via_env_var';
