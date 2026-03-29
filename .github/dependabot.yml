@@ -9,6 +9,10 @@ updates:
         applies-to: version-updates
         patterns:
           - "@aws-sdk/*"
+      chai:
+        applies-to: version-updates
+        patterns:
+          - "chai*"
       eslint:
         applies-to: version-updates
         patterns:

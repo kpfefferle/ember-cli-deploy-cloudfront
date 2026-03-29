@@ -27,8 +27,8 @@
     "uuid": "^11.0.1"
   },
   "devDependencies": {
-    "chai": "^5.3.3",
-    "chai-as-promised": "^7.1.1",
+    "chai": "^6.2.2",
+    "chai-as-promised": "^8.0.2",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-node": "^11.1.0",
