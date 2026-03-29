@@ -1,17 +1,17 @@
 /* eslint-env node */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-var assert = require('../helpers/assert');
-var RSVP = require('rsvp');
+import assert from '../helpers/assert.mjs';
+import RSVP from 'rsvp';
+import LibCloudFront from '../../lib/cloudfront.js';
+import { CloudFront as AWSCloudFront } from '@aws-sdk/client-cloudfront';
 
 describe('cloudfront', function () {
-  var CloudFront, validParams, validOptions, cloudfrontClient, plugin, subject;
+  var validParams, validOptions, validResponse, cloudfrontClient, plugin, subject;
 
   before(function () {
     process.env['AWS_ACCESS_KEY_ID'] = 'set_via_env_var';
     process.env['AWS_SECRET_ACCESS_KEY'] = 'set_via_env_var';
-
-    CloudFront = require('../../lib/cloudfront');
   });
 
   beforeEach(function () {
@@ -33,7 +33,7 @@ describe('cloudfront', function () {
       },
       log: function noop() {},
     };
-    subject = new CloudFront({
+    subject = new LibCloudFront({
       plugin: plugin,
     });
     validOptions = {
@@ -52,12 +52,11 @@ describe('cloudfront', function () {
     context('using the aws-sdk CloudFront client', function () {
       beforeEach(function () {
         plugin.readConfig = function (propertyName) {};
-        subject = new CloudFront({ plugin: plugin });
+        subject = new LibCloudFront({ plugin: plugin });
       });
 
       it('uses the AWS client', function () {
-        var { CloudFront } = require('@aws-sdk/client-cloudfront');
-        assert.ok(subject._client instanceof CloudFront);
+        assert.ok(subject._client instanceof AWSCloudFront);
       });
 
       context('with credentials in plugin config', function () {
@@ -70,7 +69,7 @@ describe('cloudfront', function () {
               return 'set_via_config';
             }
           };
-          subject = new CloudFront({ plugin: plugin });
+          subject = new LibCloudFront({ plugin: plugin });
         });
 
         it('uses the configured credentials', function () {
@@ -85,7 +84,7 @@ describe('cloudfront', function () {
       context('with no credentials in the plugin config', function () {
         beforeEach(function () {
           plugin.readConfig = function (propertyName) {};
-          subject = new CloudFront({ plugin: plugin });
+          subject = new LibCloudFront({ plugin: plugin });
         });
 
         it('falls back to default AWS credential resolution', function () {
@@ -145,7 +144,7 @@ describe('cloudfront', function () {
 
       describe('waiting for invalidation', function () {
         beforeEach(function () {
-          subject = new CloudFront({
+          subject = new LibCloudFront({
             plugin: plugin,
           });
           validOptions.waitForInvalidation = true;
