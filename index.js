@@ -39,33 +39,33 @@ module.exports = {
         var distributions = Array.isArray(distribution)
           ? distribution
           : [distribution];
-        var distributionInvalidations = distributions.map(function (
-          distribution
-        ) {
-          var options = {
-            objectPaths: objectPaths,
-            distribution: distribution,
-            waitForInvalidation: waitForInvalidation,
-          };
+        var distributionInvalidations = distributions.map(
+          function (distribution) {
+            var options = {
+              objectPaths: objectPaths,
+              distribution: distribution,
+              waitForInvalidation: waitForInvalidation,
+            };
 
-          self.log(
-            'preparing to create invalidation for CloudFront distribution `' +
-              distribution +
-              '`',
-            { verbose: true }
-          );
+            self.log(
+              'preparing to create invalidation for CloudFront distribution `' +
+                distribution +
+                '`',
+              { verbose: true },
+            );
 
-          return cloudfront
-            .invalidate(options)
-            .then(function (invalidationId) {
-              self.log(
-                'invalidation process finished for invalidation ' +
-                  invalidationId,
-                { verbose: true }
-              );
-            })
-            .catch(self._errorMessage.bind(self));
-        });
+            return cloudfront
+              .invalidate(options)
+              .then(function (invalidationId) {
+                self.log(
+                  'invalidation process finished for invalidation ' +
+                    invalidationId,
+                  { verbose: true },
+                );
+              })
+              .catch(self._errorMessage.bind(self));
+          },
+        );
 
         return RSVP.Promise.all(distributionInvalidations);
       },

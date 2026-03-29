@@ -21,7 +21,7 @@ jobs:
       - name: Use Node.js
         uses: volta-cli/action@v4
         with:
-          node-version: 18
+          node-version: 20
       - name: Install pnpm
         run: volta install pnpm@10
       - name: Install Dependencies
