@@ -1,8 +1,8 @@
 /* eslint-env node */
 /* eslint-disable no-undef */
-var assert = require('./helpers/assert');
-var plugin = require('../index');
-var BasePlugin = require('ember-cli-deploy-plugin');
+import assert from './helpers/assert.mjs';
+import plugin from '../index.js';
+import BasePlugin from 'ember-cli-deploy-plugin';
 
 describe('ember-cli-dpeloy-cloudfront plugin', function () {
   var pluginInstance, invalidateAssertions;

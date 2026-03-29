@@ -16,7 +16,7 @@
   "scripts": {
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "test": "node tests/runner.js"
+    "test": "mocha 'tests/**/*-test.mjs'"
   },
   "dependencies": {
     "@aws-sdk/client-cloudfront": "^3.855.0",
