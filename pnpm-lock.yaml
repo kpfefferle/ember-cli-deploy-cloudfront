@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@aws-sdk/client-cloudfront':
         specifier: ^3.855.0
-        version: 3.1042.0
+        version: 3.1043.0
       '@aws-sdk/credential-providers':
         specifier: ^3.855.0
-        version: 3.1042.0
+        version: 3.1043.0
       core-object:
         specifier: ^3.1.5
         version: 3.1.5
@@ -73,12 +73,12 @@ packages:
   '@aws-crypto/util@5.2.0':
     resolution: {integrity: sha512-4RkU9EsI6ZpBve5fseQlGNUWKMa1RLPQ1dnjnQoe07ldfIzcsGb5hC5W0Dm7u423KWzawlrpbjXBrXCEv9zazQ==}
 
-  '@aws-sdk/client-cloudfront@3.1042.0':
-    resolution: {integrity: sha512-LE79zvUbdvXGExuJBbJAvvNWtnxwVXYYuyQMU3pzVv4gPUknsR3WTsaEhrdR8CkRM2wXq3ZKOPSyph3C2ZYa7g==}
+  '@aws-sdk/client-cloudfront@3.1043.0':
+    resolution: {integrity: sha512-0vnJdNmw0Q41yd21GQYgG6Iij3+ByqCS8YlZ3xloUGjRaavr0b1/pXrQJMDVuFNeDQOaVpAWaArr6VPmCz1ATg==}
     engines: {node: '>=20.0.0'}
 
-  '@aws-sdk/client-cognito-identity@3.1042.0':
-    resolution: {integrity: sha512-Cdan/gdzcNEwnvaxzCDQUDJnAAROfvnxjlv5/kvc78E1yQYdgqMN9vEzaqePDNjj8V0rel/iGx2tTlf3KY+V5g==}
+  '@aws-sdk/client-cognito-identity@3.1043.0':
+    resolution: {integrity: sha512-ALRMiZ1UO6Vs4stAv0xkuUTxGJGHbSQ/T/m62sKDWu9fyTiz4Xo5UHUyeD7l5xgfRWVCbpzSJzfoEtzlBrc6TQ==}
     engines: {node: '>=20.0.0'}
 
   '@aws-sdk/core@3.974.8':
@@ -121,8 +121,8 @@ packages:
     resolution: {integrity: sha512-lYHFF30DGI20jZcYX8cm6Ns0V7f1dDN6g/MBDLTyD/5iw+bXs3yBr2iAiHDkx4RFU5JgsnZvCHYKiRVPRdmOgw==}
     engines: {node: '>=20.0.0'}
 
-  '@aws-sdk/credential-providers@3.1042.0':
-    resolution: {integrity: sha512-TKOJXoBKTtfWkRrMITPBq4CFfiXydKc7bcvTONLhXgs1BuyHPcVp2KL0Rl1//xmlw48lYgnT/jn99SanLhB8EQ==}
+  '@aws-sdk/credential-providers@3.1043.0':
+    resolution: {integrity: sha512-pOM9CG72ecjZwlMnmihwDbZYjgTHz28G+W5yUTlL9a9CpR6FxIEyzejKer/69RRN5ePUAyEnsmwuxn4EdBKzDw==}
     engines: {node: '>=20.0.0'}
 
   '@aws-sdk/middleware-host-header@3.972.10':
@@ -718,8 +718,8 @@ packages:
   fast-levenshtein@2.0.6:
     resolution: {integrity: sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==}
 
-  fast-xml-builder@1.1.8:
-    resolution: {integrity: sha512-sDVBc2gg8pSKvcbE8rBmOyjSGQf0AdsbqvHeIOv3D/uYNoV4eCReQXyDF8Pdv8+m1FHazACypSz2hR7O2S1LLw==}
+  fast-xml-builder@1.1.9:
+    resolution: {integrity: sha512-jcyKVSEX13iseJqg7n/KWw+xnu/7fdrZ333Fac54KjHDIELVCfDDJXYIm6DTJ0Su4gSzrhqiK0DzY/wZbF40mw==}
 
   fast-xml-parser@5.7.2:
     resolution: {integrity: sha512-P7oW7tLbYnhOLQk/Gv7cZgzgMPP/XN03K02/Jy6Y/NHzyIAIpxuZIM/YqAkfiXFPxA2CTm7NtCijK9EDu09u2w==}
@@ -1140,7 +1140,7 @@ snapshots:
       '@smithy/util-utf8': 2.3.0
       tslib: 2.8.1
 
-  '@aws-sdk/client-cloudfront@3.1042.0':
+  '@aws-sdk/client-cloudfront@3.1043.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
@@ -1186,7 +1186,7 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/client-cognito-identity@3.1042.0':
+  '@aws-sdk/client-cognito-identity@3.1043.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
@@ -1361,9 +1361,9 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
-  '@aws-sdk/credential-providers@3.1042.0':
+  '@aws-sdk/credential-providers@3.1043.0':
     dependencies:
-      '@aws-sdk/client-cognito-identity': 3.1042.0
+      '@aws-sdk/client-cognito-identity': 3.1043.0
       '@aws-sdk/core': 3.974.8
       '@aws-sdk/credential-provider-cognito-identity': 3.972.31
       '@aws-sdk/credential-provider-env': 3.972.34
@@ -2163,14 +2163,14 @@ snapshots:
 
   fast-levenshtein@2.0.6: {}
 
-  fast-xml-builder@1.1.8:
+  fast-xml-builder@1.1.9:
     dependencies:
       path-expression-matcher: 1.5.0
 
   fast-xml-parser@5.7.2:
     dependencies:
       '@nodable/entities': 2.1.0
-      fast-xml-builder: 1.1.8
+      fast-xml-builder: 1.1.9
       path-expression-matcher: 1.5.0
       strnum: 2.2.3
 
