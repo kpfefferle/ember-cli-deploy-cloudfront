@@ -31,7 +31,7 @@
     "chai-as-promised": "^8.0.2",
     "eslint": "^10.1.0",
     "eslint-config-prettier": "^10.0.1",
-    "eslint-plugin-n": "^17.24.0",
+    "eslint-plugin-n": "^18.0.1",
     "eslint-plugin-prettier": "^5.5.5",
     "glob": "^13.0.0",
     "globals": "^17.4.0",
