@@ -1,7 +1,7 @@
 'use strict';
 
 const js = require('@eslint/js');
-const pluginN = require('eslint-plugin-n');
+const pluginN = require('eslint-plugin-n').default;
 const prettierRecommended = require('eslint-plugin-prettier/recommended');
 const globals = require('globals');
 
