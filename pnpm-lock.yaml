@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@aws-sdk/client-cloudfront':
         specifier: ^3.855.0
-        version: 3.1071.0
+        version: 3.1072.0
       '@aws-sdk/credential-providers':
         specifier: ^3.855.0
-        version: 3.1071.0
+        version: 3.1072.0
       core-object:
         specifier: ^3.1.5
         version: 3.1.5
@@ -77,12 +77,12 @@ packages:
   '@aws-crypto/util@5.2.0':
     resolution: {integrity: sha512-4RkU9EsI6ZpBve5fseQlGNUWKMa1RLPQ1dnjnQoe07ldfIzcsGb5hC5W0Dm7u423KWzawlrpbjXBrXCEv9zazQ==}
 
-  '@aws-sdk/client-cloudfront@3.1071.0':
-    resolution: {integrity: sha512-d/PCOI4ceNl1g0Jnb8Qee6QgxpgQfGVryyKu9A78Mpa2B8mVyBvna4kLdKHoG0y2zB/1Z6o4nDkl4ZgsPJsSkw==}
+  '@aws-sdk/client-cloudfront@3.1072.0':
+    resolution: {integrity: sha512-XC7/caA7/y6O9Q8/C30og+faiqRLcPYoD0vXo4CRjMDxEFk3CJyyf8MwjH09tagtsvoN2O8iXEtI/wdri9Pydg==}
     engines: {node: '>=20.0.0'}
 
-  '@aws-sdk/client-cognito-identity@3.1071.0':
-    resolution: {integrity: sha512-DIzsM+S/jLcTu+gRHy/luPGkqjiXIQFQTe8zCADE1SX4QXw05bUJNoF2yI0z3HUEMC4wIJsVhDpgKt6jeUr/eA==}
+  '@aws-sdk/client-cognito-identity@3.1072.0':
+    resolution: {integrity: sha512-V4Ic0hmxYlDiyMGArYoPL0EG6A4NHO6tlXC0oIfVJNAr/4uG9cbEMwcutrZkWVMU0QnxYk4iuOjUenF3wOGEBg==}
     engines: {node: '>=20.0.0'}
 
   '@aws-sdk/core@3.974.22':
@@ -125,8 +125,8 @@ packages:
     resolution: {integrity: sha512-0Iv5QttS6wcATlodYKgvQj6B9Db51rx7NU9fqu0PoLeS4BIgdYMc/QK4smwLwpm5RFrs02V/eLyEFp3FklvlNQ==}
     engines: {node: '>=20.0.0'}
 
-  '@aws-sdk/credential-providers@3.1071.0':
-    resolution: {integrity: sha512-CyujYtNK0EoKgxwkqlz3UGADDgXVhOsGudqau/tlxzLAt25cYi5o9wImIVwbO5NwGy3CqjYC/2bQp1z2lW0XfQ==}
+  '@aws-sdk/credential-providers@3.1072.0':
+    resolution: {integrity: sha512-TapaSwjVRVOV/1yEqlNRg6Co+YFnUBhYBlYZomHaY5FfbrsrtFueCBy0cDDrvr9s5wVIUkYLdsfiXeitatHfJg==}
     engines: {node: '>=20.0.0'}
 
   '@aws-sdk/nested-clients@3.997.22':
@@ -317,8 +317,8 @@ packages:
     resolution: {integrity: sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg==}
     engines: {node: '>=12'}
 
-  anynum@1.0.0:
-    resolution: {integrity: sha512-xjR9/zBVnUOP6ztMIIgShjsxui80nQUQH+5xJnvrYLs+90bF25/KJqaAi8mk+B4RDtX1Nspi6fmp4YTEts8SfA==}
+  anynum@1.0.1:
+    resolution: {integrity: sha512-N6//FLET/tXYNM/F6ABca1oH6fWB+KlTt909Le28WMDBk8oaT4vY17DCrwg2MvmuqUKt3Ni4N5dGJ/EoBgcO6A==}
 
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
@@ -855,8 +855,8 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  strnum@2.4.0:
-    resolution: {integrity: sha512-sHrVyWWdq28RbhjuJdZsA1SnGRJV6NiXbk6AXBxDOsgAcA+lmpUZCYjOdLBxkXMwis6RRe7dlZt4VlIWFVzkmg==}
+  strnum@2.4.1:
+    resolution: {integrity: sha512-M9eUSMT2dCB2cTNPG7UYj6KuK7RJR2SN2+yCV/fTW3xzTCS6EaGZ5pSMgDIjB7r8zSfTGk+dvvn9rTjpVS9Mwg==}
 
   supports-color@2.0.0:
     resolution: {integrity: sha512-KKNVtd6pCYgPIKU4cp2733HWYCpplQhddZLBUryaAHou723x+FRzQ5Df824Fj+IyyuiQTRoub4SnIFfIcrp70g==}
@@ -980,7 +980,7 @@ snapshots:
       '@smithy/util-utf8': 2.3.0
       tslib: 2.8.1
 
-  '@aws-sdk/client-cloudfront@3.1071.0':
+  '@aws-sdk/client-cloudfront@3.1072.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
@@ -993,7 +993,7 @@ snapshots:
       '@smithy/types': 4.15.0
       tslib: 2.8.1
 
-  '@aws-sdk/client-cognito-identity@3.1071.0':
+  '@aws-sdk/client-cognito-identity@3.1072.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
@@ -1109,9 +1109,9 @@ snapshots:
       '@smithy/types': 4.15.0
       tslib: 2.8.1
 
-  '@aws-sdk/credential-providers@3.1071.0':
+  '@aws-sdk/credential-providers@3.1072.0':
     dependencies:
-      '@aws-sdk/client-cognito-identity': 3.1071.0
+      '@aws-sdk/client-cognito-identity': 3.1072.0
       '@aws-sdk/core': 3.974.22
       '@aws-sdk/credential-provider-cognito-identity': 3.972.47
       '@aws-sdk/credential-provider-env': 3.972.48
@@ -1326,7 +1326,7 @@ snapshots:
 
   ansi-styles@6.2.3: {}
 
-  anynum@1.0.0: {}
+  anynum@1.0.1: {}
 
   argparse@2.0.1: {}
 
@@ -1569,7 +1569,7 @@ snapshots:
       '@nodable/entities': 2.2.0
       fast-xml-builder: 1.2.0
       path-expression-matcher: 1.5.0
-      strnum: 2.4.0
+      strnum: 2.4.1
 
   file-entry-cache@8.0.0:
     dependencies:
@@ -1839,9 +1839,9 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  strnum@2.4.0:
+  strnum@2.4.1:
     dependencies:
-      anynum: 1.0.0
+      anynum: 1.0.1
 
   supports-color@2.0.0: {}
 
