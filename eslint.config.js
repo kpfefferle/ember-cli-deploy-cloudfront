@@ -4,7 +4,7 @@ const js = require('@eslint/js');
 // eslint-plugin-n >= 18.2 exports the plugin directly from require();
 // older versions wrapped it in `.default`
 const pluginNExport = require('eslint-plugin-n');
-const pluginN = pluginNExport.default ?? pluginNExport;
+const pluginN = pluginNExport.default || pluginNExport;
 const prettierRecommended = require('eslint-plugin-prettier/recommended');
 const globals = require('globals');
 
