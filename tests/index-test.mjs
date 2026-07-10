@@ -70,10 +70,11 @@ describe('ember-cli-dpeloy-cloudfront plugin', function () {
     });
 
     it('allows to use a function for objectPaths', function () {
-      pluginInstance.pluginConfig.objectPaths =
-        function (/*config, context, configHelper*/) {
-          return ['/dynamic_filename.html'];
-        };
+      pluginInstance.pluginConfig.objectPaths = function (
+        /*config, context, configHelper*/
+      ) {
+        return ['/dynamic_filename.html'];
+      };
       invalidateAssertions.push(function (options) {
         assert.deepEqual(options.objectPaths, ['/dynamic_filename.html']);
       });
