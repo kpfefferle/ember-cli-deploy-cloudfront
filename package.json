@@ -39,7 +39,7 @@
     "prettier": "^3.9.5"
   },
   "engines": {
-    "node": "16.* || 18.* || >= 20"
+    "node": ">= 20.19"
   },
   "ember-addon": {},
   "volta": {
