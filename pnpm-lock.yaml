@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@aws-sdk/client-cloudfront':
         specifier: ^3.855.0
-        version: 3.1085.0
+        version: 3.1086.0
       '@aws-sdk/credential-providers':
         specifier: ^3.855.0
-        version: 3.1081.0
+        version: 3.1086.0
       core-object:
         specifier: ^3.1.5
         version: 3.1.5
@@ -60,12 +60,8 @@ importers:
 
 packages:
 
-  '@aws-sdk/client-cloudfront@3.1085.0':
-    resolution: {integrity: sha512-fIGLTXHGFFrlhACzwKjPI/fCPzugTyblU1LV7B0n0BK/1+4udVMdE1OofEbKNlKuy8f1CyeOUaIRmEjcS3bTaA==}
-    engines: {node: '>=20.0.0'}
-
-  '@aws-sdk/client-cognito-identity@3.1081.0':
-    resolution: {integrity: sha512-ipDgvZ3Hy8kaFrkwj62yuoghKkZi5WrWTiJnaqGc/ntbuAuijIkRWhzSb8d1MGEE+qb+vFFTrWVFwGSqt76TCA==}
+  '@aws-sdk/client-cloudfront@3.1086.0':
+    resolution: {integrity: sha512-MbqWAu9sNRgnCvuTvVSMgsUD9g4DCvhmiXc5G77/Lq3ty6joCsk/VdQ8naqw/IqMZc3HSVZMTqVugI8yHtq4Rw==}
     engines: {node: '>=20.0.0'}
 
   '@aws-sdk/core@3.975.1':
@@ -92,8 +88,8 @@ packages:
     resolution: {integrity: sha512-GREWRrMj0XnNKMaVa/Mauoaui26qBEHu71WWqXbwZOu/jFQOnPZjTf7u0KtGKC8VGa6VUs9kDWGgocrKNLS9vw==}
     engines: {node: '>=20.0.0'}
 
-  '@aws-sdk/credential-provider-node@3.972.66':
-    resolution: {integrity: sha512-f+qjRXZpz7sgzbc4QB+6nLKfyKFgRRXzWdXbsKPv/VhVRyHsDyq4yBWC/B75BAJpFIcUeI2XR/3gdWJ677zB4A==}
+  '@aws-sdk/credential-provider-node@3.972.67':
+    resolution: {integrity: sha512-oYlzWst56rlhhjbYnexwv5hVLYe1cW4liLObhDfxDLI4RAQzleMVHQgQgx7XsC4HKj4e3kjT8v9DId+Pi/dndw==}
     engines: {node: '>=20.0.0'}
 
   '@aws-sdk/credential-provider-process@3.972.57':
@@ -108,8 +104,8 @@ packages:
     resolution: {integrity: sha512-8qZLFhM69eKcS37m459ctPR05Qimycm/74OPVioe6wNZabMT54GYhwBju0+J656RkMasNSawWQu+c8CmBe3TUQ==}
     engines: {node: '>=20.0.0'}
 
-  '@aws-sdk/credential-providers@3.1081.0':
-    resolution: {integrity: sha512-UHWvxd1F5nfBXBRXtQaXWoNT8CYKXZovLQOyz6XZlgFTGc2mWzzPGspOfnh49jwvB2qzsdH046i9jnnmND+64w==}
+  '@aws-sdk/credential-providers@3.1086.0':
+    resolution: {integrity: sha512-4Vewvblp1JXL9Qtf9+srAsksBp1PmAJGk6T0hM0YcZdYDrbSE9Lpy9iTraumJqQACSTTkjqXSlaISrEGn2c5hw==}
     engines: {node: '>=20.0.0'}
 
   '@aws-sdk/nested-clients@3.997.31':
@@ -891,21 +887,10 @@ packages:
 
 snapshots:
 
-  '@aws-sdk/client-cloudfront@3.1085.0':
+  '@aws-sdk/client-cloudfront@3.1086.0':
     dependencies:
       '@aws-sdk/core': 3.975.1
-      '@aws-sdk/credential-provider-node': 3.972.66
-      '@aws-sdk/types': 3.974.0
-      '@smithy/core': 3.29.3
-      '@smithy/fetch-http-handler': 5.6.5
-      '@smithy/node-http-handler': 4.9.5
-      '@smithy/types': 4.16.1
-      tslib: 2.8.1
-
-  '@aws-sdk/client-cognito-identity@3.1081.0':
-    dependencies:
-      '@aws-sdk/core': 3.975.1
-      '@aws-sdk/credential-provider-node': 3.972.66
+      '@aws-sdk/credential-provider-node': 3.972.67
       '@aws-sdk/types': 3.974.0
       '@smithy/core': 3.29.3
       '@smithy/fetch-http-handler': 5.6.5
@@ -975,7 +960,7 @@ snapshots:
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
-  '@aws-sdk/credential-provider-node@3.972.66':
+  '@aws-sdk/credential-provider-node@3.972.67':
     dependencies:
       '@aws-sdk/credential-provider-env': 3.972.57
       '@aws-sdk/credential-provider-http': 3.972.59
@@ -1016,16 +1001,15 @@ snapshots:
       '@smithy/types': 4.16.1
       tslib: 2.8.1
 
-  '@aws-sdk/credential-providers@3.1081.0':
+  '@aws-sdk/credential-providers@3.1086.0':
     dependencies:
-      '@aws-sdk/client-cognito-identity': 3.1081.0
       '@aws-sdk/core': 3.975.1
       '@aws-sdk/credential-provider-cognito-identity': 3.972.56
       '@aws-sdk/credential-provider-env': 3.972.57
       '@aws-sdk/credential-provider-http': 3.972.59
       '@aws-sdk/credential-provider-ini': 3.973.1
       '@aws-sdk/credential-provider-login': 3.972.63
-      '@aws-sdk/credential-provider-node': 3.972.66
+      '@aws-sdk/credential-provider-node': 3.972.67
       '@aws-sdk/credential-provider-process': 3.972.57
       '@aws-sdk/credential-provider-sso': 3.973.1
       '@aws-sdk/credential-provider-web-identity': 3.972.63
