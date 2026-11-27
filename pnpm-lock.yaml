@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@aws-sdk/client-cloudfront':
         specifier: ^3.855.0
-        version: 3.1175.0
+        version: 3.1176.0
       '@aws-sdk/credential-providers':
         specifier: ^3.855.0
-        version: 3.1175.0
+        version: 3.1176.0
       core-object:
         specifier: ^3.1.5
         version: 3.1.5
@@ -60,8 +60,8 @@ importers:
 
 packages:
 
-  '@aws-sdk/client-cloudfront@3.1175.0':
-    resolution: {integrity: sha512-0qMCSXle2koJz/3J5sqxZvsbACe9YtVOU402a8xFj8V3Wt7h75nSemBYlCt3+F91BSXqwNfOlG5yUM2kX4Ts6g==}
+  '@aws-sdk/client-cloudfront@3.1176.0':
+    resolution: {integrity: sha512-x0ZOLCt749+KQGWX1LvhgOJYhHnGeEtKPqjGfo1cB0rsHOChxL/lAzBKwNNQ80bXopuZAWP7HIPGG9OVnFOLDg==}
     engines: {node: '>=20.0.0'}
 
   '@aws-sdk/core@3.981.1':
@@ -104,8 +104,8 @@ packages:
     resolution: {integrity: sha512-4k4beWSkxhwKeGMVfgppv/LwCfCd1zAycWgqop7GHkdvdNK9TTkWn299LjUQOgDMfBX2Sv08t+J1mAWKHatttw==}
     engines: {node: '>=20.0.0'}
 
-  '@aws-sdk/credential-providers@3.1175.0':
-    resolution: {integrity: sha512-mlmafV59ByftIS66u4zqU3VLDAYDMRf5wdFGAHWYJpaTM3Z0oZSHc06pQAsRFDk/vbxZxlaci85bqgQLsjvD9A==}
+  '@aws-sdk/credential-providers@3.1176.0':
+    resolution: {integrity: sha512-0j+X4Ou9UJA+E5h+vclSWcPpMJdjYGpPSQyprzdhHq5VnXD7lTJtTXjisr4qlsFklVFVzmNl+P9ER48xHAqcKg==}
     engines: {node: '>=20.0.0'}
 
   '@aws-sdk/nested-clients@3.998.4':
@@ -767,7 +767,7 @@ packages:
 
 snapshots:
 
-  '@aws-sdk/client-cloudfront@3.1175.0':
+  '@aws-sdk/client-cloudfront@3.1176.0':
     dependencies:
       '@aws-sdk/core': 3.981.1
       '@aws-sdk/credential-provider-node': 3.972.98
@@ -881,7 +881,7 @@ snapshots:
       '@smithy/types': 4.20.0
       tslib: 2.8.1
 
-  '@aws-sdk/credential-providers@3.1175.0':
+  '@aws-sdk/credential-providers@3.1176.0':
     dependencies:
       '@aws-sdk/core': 3.981.1
       '@aws-sdk/credential-provider-cognito-identity': 3.972.84
